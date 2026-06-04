@@ -41,3 +41,10 @@ Version actuelle : prototype minimal.
 Ce dépôt privilégie la clarté du contenu avant la sophistication technique.
 
 Les composants réellement réutilisables pourront être extraits ultérieurement vers un dépôt dédié de type "design system".
+
+## Documentation
+
+- [Setup](./docs/setup.md)
+- [Conventions](./docs/conventions.md)
+- [Git](./docs/git.md)
+- [Design System](./docs/design-system.md)
