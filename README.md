@@ -6,11 +6,11 @@ Site vitrine personnel de Vincent Mardon, pianiste accompagnateur indépendant.
 
 Ce projet poursuit plusieurs objectifs :
 
-* Disposer d'une présence en ligne simple et professionnelle.
-* Présenter mes prestations de pianiste accompagnateur.
-* Permettre une prise de contact rapide.
-* Expérimenter la maintenance d'un site réel sur le long terme.
-* Servir de terrain d'expérimentation pour de futurs composants réutilisables.
+- Disposer d'une présence en ligne simple et professionnelle.
+- Présenter mes prestations de pianiste accompagnateur.
+- Permettre une prise de contact rapide.
+- Expérimenter la maintenance d'un site réel sur le long terme.
+- Servir de terrain d'expérimentation pour de futurs composants réutilisables.
 
 ## Contenu
 
@@ -18,10 +18,10 @@ Le contenu principal est rédigé en Markdown afin de privilégier la simplicit�
 
 Pages prévues :
 
-* Accueil
-* Présentation
-* Tarifs
-* Contact
+- Accueil
+- Présentation
+- Tarifs
+- Contact
 
 ## État du projet
 
@@ -31,10 +31,10 @@ Version actuelle : prototype minimal.
 
 ## Technologies envisagées
 
-* Markdown
-* React / Next.js
-* TypeScript
-* Vanilla Extract
+- Markdown
+- React / Next.js
+- TypeScript
+- Vanilla Extract
 
 ## Notes
 

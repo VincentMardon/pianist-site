@@ -1,4 +1,4 @@
-import { page } from '@/styles/global.css'
+import { page } from '@/styles/global.css';
 
 export default function Home() {
   return (

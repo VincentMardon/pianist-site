@@ -10,12 +10,12 @@ Basé en Seine-et-Marne, j'interviens principalement dans le secteur de Grand Pa
 
 ## Prestations
 
-* Accompagnement d'élèves de conservatoire
-* Préparation d'examens et d'auditions
-* Accompagnement de chanteurs
-* Répétitions de musique de chambre
-* Concerts et projets ponctuels
-* Coaching musical et travail de partition
+- Accompagnement d'élèves de conservatoire
+- Préparation d'examens et d'auditions
+- Accompagnement de chanteurs
+- Répétitions de musique de chambre
+- Concerts et projets ponctuels
+- Coaching musical et travail de partition
 
 ---
 
