@@ -5,6 +5,10 @@ const withVanillaExtract = createVanillaExtractPlugin();
 const nextConfig: NextConfig = {
   /* config options here */
   //turbopack: {},
+
+  outputFileTracingIncludes: {
+    '/': ['./src/content/**/*.md'],
+  },
 };
 
 export default withVanillaExtract(nextConfig);
