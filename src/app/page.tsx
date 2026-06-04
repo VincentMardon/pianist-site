@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 const pages = {
   home: 'home.md',
@@ -34,7 +35,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       </header>
 
       <main>
-        <ReactMarkdown>{markdown}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
       </main>
     </div>
   );
