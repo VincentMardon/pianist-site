@@ -104,3 +104,7 @@ todo.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local notes
+notes/
+todo.md
