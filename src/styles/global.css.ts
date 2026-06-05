@@ -20,6 +20,12 @@ globalStyle('main', {
   padding: '2rem',
 });
 
+globalStyle('header', {
+  maxWidth: '900px',
+  margin: '0 auto',
+  padding: '2rem',
+});
+
 globalStyle('h1', {
   marginBottom: '1.5rem',
 });
@@ -35,5 +41,20 @@ globalStyle('h1, h2, h3', {
 });
 
 globalStyle('h1, h2, a', {
+  color: semanticColors.actionPrimary,
+});
+
+globalStyle('header nav', {
+  display: 'flex',
+  gap: '1.5rem',
+  alignItems: 'center',
+});
+
+globalStyle('header a', {
+  color: semanticColors.textPrimary,
+  textDecoration: 'none',
+});
+
+globalStyle('header a:hover', {
   color: semanticColors.actionPrimary,
 });
