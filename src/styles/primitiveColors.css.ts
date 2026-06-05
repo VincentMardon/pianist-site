@@ -3,7 +3,7 @@ export const primitiveColors = {
   ebony: '#0B0B0B',
 
   gold300: '#FEC94D',
-  gold500: '#E1B653',
+  gold500: '#D6B15C',
   gold700: '#A9854C',
 
   green300: '#35E708',
