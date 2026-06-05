@@ -29,7 +29,8 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     <div>
       <header>
         <nav>
-          <Link href="/?page=home">Accueil</Link> <Link href="/?page=presentation">Présentation</Link>{' '}
+          <Link href="/?page=home">Accueil</Link>
+          <Link href="/?page=presentation">Présentation</Link>
           <Link href="/?page=tarifs">Tarifs</Link>
         </nav>
       </header>
