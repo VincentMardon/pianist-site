@@ -42,7 +42,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
           <>
             <section>
               <h1>Vincent Mardon</h1>
-              <p>Pianiste accompagnateur</p>
+              <h2>Pianiste accompagnateur</h2>
               <p>
                 J'accompagne chanteurs, instrumentistes et ensembles pour leurs répétitions, auditions, examens,
                 concerts et projets musicaux.
