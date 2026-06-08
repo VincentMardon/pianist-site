@@ -10,7 +10,8 @@ globalStyle('html, body', {
 });
 
 globalStyle('body', {
-  fontFamily: "'Poppins', system-ui, sans-serif",
+  fontFamily: 'var(--font-body), system-ui, sans-serif',
+  fontWeight: 300,
   lineHeight: 1.6,
 });
 
@@ -36,7 +37,7 @@ globalStyle('h2', {
 });
 
 globalStyle('h1, h2, h3', {
-  fontFamily: "'Cormorant Garamond', 'Playfair Display', serif",
+  fontFamily: 'var(--font-title), serif',
   fontWeight: 600,
 });
 
