@@ -17,7 +17,8 @@ const cormorant = Cormorant_Infant({
 
 export const metadata: Metadata = {
   title: 'Vincent Mardon | Pianiste accompagnateur',
-  description: 'Pianiste accompagnateur indépendant en Île-de-France',
+  description:
+    'Vincent Mardon, pianiste accompagnateur indépendant en Île-de-France. Accompagnement de chanteurs, instrumentistes, examens, auditions et projets artistiques.',
   verification: {
     google: 'HSmgXPI2nMj4FKgroMLw7r3-E7f5bmkal8t1TzDHNtw',
   },
