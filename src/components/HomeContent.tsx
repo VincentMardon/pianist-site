@@ -13,7 +13,7 @@ export default function HomeContent() {
           Basé en Seine-et-Marne, j'interviens principalement dans le secteur de Grand Paris Sud et en Île-de-France.
         </p>
 
-        <Link href="/?page=presentation">En savoir plus</Link>
+        <Link href="/presentation">En savoir plus</Link>
       </section>
 
       <section>
@@ -27,7 +27,7 @@ export default function HomeContent() {
           <li>Coaching musical et travail de partition</li>
         </ul>
 
-        <Link href="/?page=tarifs">Consulter les tarifs</Link>
+        <Link href="/tarifs">Consulter les tarifs</Link>
       </section>
 
       <section>

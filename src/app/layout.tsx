@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Cormorant_Infant, Inter } from 'next/font/google';
+import Link from 'next/link';
 import '@/styles/global.css';
 
 const inter = Inter({
@@ -32,7 +33,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${inter.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
+      <body>
+        <div>
+          <header>
+            <nav>
+              <Link href="/">Accueil</Link>
+              <Link href="/presentation">Présentation</Link>
+              <Link href="/tarifs">Tarifs</Link>
+              <Link href="/contact">Contact</Link>
+            </nav>
+          </header>
+
+          <main>{children}</main>
+        </div>
+      </body>
       <Analytics />
       <SpeedInsights />
     </html>
