@@ -1,6 +1,14 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { semanticColors } from './semanticColors.css';
 
+/* ==================================
+   Base
+   ================================== */
+
+globalStyle('*, *::before, *::after', {
+  boxSizing: 'border-box',
+});
+
 globalStyle('html, body', {
   margin: 0,
   padding: 0,
@@ -15,6 +23,10 @@ globalStyle('body', {
   lineHeight: 1.6,
 });
 
+/* ==================================
+   Layout
+   ================================== */
+
 globalStyle('main', {
   maxWidth: '900px',
   margin: '0 auto',
@@ -27,6 +39,21 @@ globalStyle('header', {
   padding: '2rem',
 });
 
+globalStyle('header nav', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '1.5rem',
+});
+
+/* ==================================
+   Typography
+   ================================== */
+
+globalStyle('h1, h2, h3', {
+  fontFamily: 'var(--font-title), serif',
+  fontWeight: 600,
+});
+
 globalStyle('h1', {
   marginBottom: '1.5rem',
 });
@@ -36,19 +63,12 @@ globalStyle('h2', {
   marginBottom: '1rem',
 });
 
-globalStyle('h1, h2, h3', {
-  fontFamily: 'var(--font-title), serif',
-  fontWeight: 600,
-});
+/* ==========================================================================
+   Links
+   ========================================================================== */
 
 globalStyle('h1, h2, a', {
   color: semanticColors.actionPrimary,
-});
-
-globalStyle('header nav', {
-  display: 'flex',
-  gap: '1.5rem',
-  alignItems: 'center',
 });
 
 globalStyle('header a', {
