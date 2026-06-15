@@ -32,9 +32,10 @@ Le projet peut désormais entrer dans sa phase visible : contenu, design system 
 ### Changed
 
 - Réécriture de la présentation pour renforcer la clarté, la confiance et le positionnement professionnel.
+- Refactorisation de la page d'accueil avec extraction du composant HomeContent.
+- Création du composant MarkdownPage pour centraliser le rendu des contenus Markdown.
 
 ### Notes
 
 - Le fichier `global.css.ts` remplit actuellement son rôle mais contient plusieurs responsabilités (layout, typographie, navigation). Une séparation future en modules plus spécialisés pourra être envisagée si le projet continue de grandir.
-- La page d'accueil est actuellement basée sur du contenu Markdown. Une migration vers une page HTML/React dédiée est envisagée afin de permettre une mise en page plus riche et l'ajout de boutons de navigation entre les différentes sections du site.
 - Les futures évolutions devraient se concentrer davantage sur l'expérience utilisateur, le contenu et la navigation que sur l'infrastructure technique.
