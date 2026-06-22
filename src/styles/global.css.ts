@@ -40,6 +40,7 @@ globalStyle('main', {
 globalStyle('h1, h2, h3', {
   fontFamily: 'var(--font-title), serif',
   fontWeight: 600,
+  color: semanticColors.actionPrimary,
 });
 
 globalStyle('h1', {
@@ -49,12 +50,4 @@ globalStyle('h1', {
 globalStyle('h2', {
   marginTop: '3rem',
   marginBottom: '1rem',
-});
-
-/* ==========================================================================
-   Links
-   ========================================================================== */
-
-globalStyle('h1, h2, a', {
-  color: semanticColors.actionPrimary,
 });
