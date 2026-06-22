@@ -53,16 +53,22 @@ export const table = style({
   borderCollapse: 'collapse',
 });
 
-export const tableHead = style({
-  borderBottom: `1px solid ${semanticColors.actionPrimary}`,
-});
+export const tableHead = style({});
 
 export const tableHeaderCell = style({
   padding: '0.75rem',
   textAlign: 'left',
   fontWeight: 500,
   color: semanticColors.actionPrimary,
+  borderBottom: `1px solid ${semanticColors.actionPrimary}`,
 });
+
+export const tableHeaderCellAlignRight = style([
+  tableHeaderCell,
+  {
+    textAlign: 'right',
+  },
+]);
 
 export const tableCell = style({
   padding: '0.75rem',

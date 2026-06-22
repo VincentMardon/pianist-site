@@ -32,7 +32,7 @@ export default async function MarkdownPage({ fileName }: MarkdownPageProps) {
           ),
           thead: ({ children }) => <thead className={styles.tableHead}>{children}</thead>,
           th: ({ children, style }) => (
-            <th className={style?.textAlign === 'right' ? styles.tableCellAlignRight : styles.tableHeaderCell}>
+            <th className={style?.textAlign === 'right' ? styles.tableHeaderCellAlignRight : styles.tableHeaderCell}>
               {children}
             </th>
           ),

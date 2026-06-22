@@ -51,3 +51,13 @@ globalStyle('h2', {
   marginTop: '3rem',
   marginBottom: '1rem',
 });
+
+globalStyle('main a', {
+  color: semanticColors.actionPrimary,
+  textDecoration: 'underline',
+  textUnderlineOffset: '0.2rem',
+});
+
+globalStyle('main a:hover', {
+  color: semanticColors.actionPrimaryLight,
+});
