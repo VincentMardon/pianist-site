@@ -4,6 +4,7 @@ import * as styles from './SiteHeader.css';
 const navigationLinks = [
   { href: '/', label: 'Accueil' },
   { href: '/presentation', label: 'Présentation' },
+  { href: '/pedagogie', label: 'Pédagogie' },
   { href: '/tarifs', label: 'Tarifs' },
   { href: '/contact', label: 'Contact' },
 ];

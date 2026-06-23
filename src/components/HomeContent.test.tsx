@@ -24,21 +24,27 @@ describe('HomeContent', () => {
 
     expect(
       screen.getByRole('link', {
-        name: /en savoir plus/i,
+        name: /^en savoir plus$/i,
       }),
-    ).toBeInTheDocument();
+    ).toHaveAttribute('href', '/presentation');
 
     expect(
       screen.getByRole('link', {
         name: /consulter les tarifs/i,
       }),
-    ).toBeInTheDocument();
+    ).toHaveAttribute('href', '/tarifs');
+
+    expect(
+      screen.getByRole('link', {
+        name: /en savoir plus sur ma méthode pédagogique/i,
+      }),
+    ).toHaveAttribute('href', '/pedagogie');
 
     expect(
       screen.getByRole('link', {
         name: /me contacter/i,
       }),
-    ).toBeInTheDocument();
+    ).toHaveAttribute('href', '/contact');
   });
 
   it('renders all section headings', () => {

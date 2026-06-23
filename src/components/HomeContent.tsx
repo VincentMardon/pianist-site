@@ -25,7 +25,7 @@ export default function HomeContent() {
           <li>Accompagnements de chanteurs</li>
           <li>Répétitions de musique de chambre</li>
           <li>Concerts et projets ponctuels</li>
-          <li>Coaching musical et travail de partition</li>
+          <li>Accompagnement pédagogique, méthode de travail et interprétation</li>
         </ul>
 
         <Link href="/tarifs">Consulter les tarifs</Link>
@@ -41,6 +41,13 @@ export default function HomeContent() {
           Mon objectif est de proposer un accompagnement sérieux, attentif et adapté aux besoins de chaque musicien,
           qu&apos;il soit amateur, étudiant ou professionnel.
         </p>
+        <p>
+          Cette approche peut également s&apos;inscrire dans un cadre pédagogique, pour les personnes qui souhaitent
+          progresser au piano, préparer une œuvre, reprendre une pratique musicale ou construire une méthode de travail
+          plus solide.
+        </p>
+
+        <Link href="/pedagogie">En savoir plus sur ma méthode pédagogique</Link>
       </section>
 
       <section>
