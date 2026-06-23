@@ -42,7 +42,10 @@ Le projet peut désormais entrer dans sa phase visible : contenu, design system 
 - Ajout de la page `Pédagogie`.
 - Ajout d’un lien vers la méthode pédagogique depuis la page d’accueil.
 - Ajout de la page pédagogie dans la navigation principale.
-- Ajout de métadonnées SEO spécifiques pour la page d’accueil.
+- Ajout de métadonnées SEO spécifiques par page.
+- Ajout d’un pied de page commun au site.
+- Ajout d’une page `Mentions légales`.
+- Ajout de tests pour le composant `SiteFooter`.
 
 ### Changed
 
@@ -51,9 +54,11 @@ Le projet peut désormais entrer dans sa phase visible : contenu, design system 
 - Ajout des formats pédagogiques : cours débutant de 30 minutes et cours particuliers de 40 à 60 €/h selon le niveau.
 - Ajout de précisions sur les forfaits à la demi-journée et à la journée.
 - Harmonisation des titres et descriptions SEO par page.
-- Ajustement des tests liés aux nouveaux liens et tableaux Markdown.
+- Ajustement des tests liés aux nouveaux liens et aux nouveaux tableaux Markdown.
+- Préparation de la structure globale du site avant le chantier design et UX.
 
 ### Notes
 
-- Le contenu principal du site est désormais suffisamment stabilisé pour passer à une phase de design, d’amélioration UX et de mise en page.
-- Les prochaines évolutions devraient porter en priorité sur la hiérarchie visuelle, la navigation, les composants d’interface et le confort de lecture.
+- Le site dispose maintenant d’une structure complète : navigation principale, contenu métier, page pédagogie, tarifs détaillés, contact, pied de page et mentions légales.
+- Le contenu principal et les métadonnées SEO sont suffisamment stabilisés pour passer à une phase de design, d’amélioration UX et de hiérarchie visuelle.
+- Les prochaines évolutions devraient se concentrer sur la mise en page, le confort de lecture, les composants d’interface, la navigation mobile et l’identité visuelle.
