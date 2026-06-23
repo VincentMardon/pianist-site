@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Cormorant_Infant, Inter } from 'next/font/google';
 import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
 import '@/styles/global.css';
 
 const inter = Inter({
@@ -41,6 +42,8 @@ export default function RootLayout({
           <SiteHeader />
 
           <main>{children}</main>
+
+          <SiteFooter />
         </div>
       </body>
       <Analytics />
