@@ -35,7 +35,25 @@ Le projet peut désormais entrer dans sa phase visible : contenu, design system 
 - Refactorisation de la page d'accueil avec extraction du composant HomeContent.
 - Création du composant MarkdownPage pour centraliser le rendu des contenus Markdown.
 
+## [Unreleased]
+
+### Added
+
+- Ajout de la page `Pédagogie`.
+- Ajout d’un lien vers la méthode pédagogique depuis la page d’accueil.
+- Ajout de la page pédagogie dans la navigation principale.
+- Ajout de métadonnées SEO spécifiques pour la page d’accueil.
+
+### Changed
+
+- Révision de la page tarifs avec une présentation plus structurée.
+- Mise à jour des tarifs d’accompagnement à 60 €/h.
+- Ajout des formats pédagogiques : cours débutant de 30 minutes et cours particuliers de 40 à 60 €/h selon le niveau.
+- Ajout de précisions sur les forfaits à la demi-journée et à la journée.
+- Harmonisation des titres et descriptions SEO par page.
+- Ajustement des tests liés aux nouveaux liens et tableaux Markdown.
+
 ### Notes
 
-- Le fichier `global.css.ts` remplit actuellement son rôle mais contient plusieurs responsabilités (layout, typographie, navigation). Une séparation future en modules plus spécialisés pourra être envisagée si le projet continue de grandir.
-- Les futures évolutions devraient se concentrer davantage sur l'expérience utilisateur, le contenu et la navigation que sur l'infrastructure technique.
+- Le contenu principal du site est désormais suffisamment stabilisé pour passer à une phase de design, d’amélioration UX et de mise en page.
+- Les prochaines évolutions devraient porter en priorité sur la hiérarchie visuelle, la navigation, les composants d’interface et le confort de lecture.
