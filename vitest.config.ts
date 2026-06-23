@@ -16,7 +16,13 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'html'],
       include: ['src/**/*.{ts,tsx}'],
-      exclude: ['src/**/*.css.ts', 'src/**/*.test.{ts,tsx}', 'src/app/**/page.tsx', 'src/app/layout.tsx'],
+      exclude: [
+        'src/**/*.css.ts',
+        'src/**/*.test.{ts,tsx}',
+        'src/app/**/page.tsx',
+        'src/app/layout.tsx',
+        'src/app/not-found.tsx',
+      ],
     },
   },
 });
