@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import MarkdownPage from '@/components/MarkdownPage';
 
 export const metadata: Metadata = {
-  title: 'Tarifs | Vincent Mardon',
+  title: 'Tarifs',
   description:
-    'Tarifs des prestations de Vincent Mardon, pianiste accompagnateur en Île-de-France : accompagnement, cours particuliers, concerts et projets spécifiques.',
+    'Tarifs de Vincent Mardon pour accompagnement musical, cours de piano, accompagnement pédagogique, concerts, demi-journées, journées et projets projets sur devis.',
 };
 
 export default function TarifsPage() {
