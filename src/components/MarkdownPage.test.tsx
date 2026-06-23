@@ -12,9 +12,29 @@ describe('MarkdownPage', () => {
   it('renders markdown tables', async () => {
     render(await MarkdownPage({ fileName: 'tarifs.md' }));
 
-    expect(screen.getByRole('table')).toBeInTheDocument();
-    expect(screen.getByRole('columnheader', { name: /prestation/i })).toBeInTheDocument();
-    expect(screen.getByRole('columnheader', { name: /tarif/i })).toBeInTheDocument();
-    expect(screen.getAllByRole('cell', { name: /50 €\/h/i })).toHaveLength(2);
+    expect(screen.getAllByRole('table')).toHaveLength(4);
+
+    expect(
+      screen.getAllByRole('columnheader', {
+        name: /prestation/i,
+      }),
+    ).toHaveLength(4);
+
+    expect(
+      screen.getAllByRole('columnheader', {
+        name: /tarif/i,
+      }),
+    ).toHaveLength(4);
+
+    expect(screen.getByText(/accompagnement ponctuel/i)).toBeInTheDocument();
+    expect(screen.getByText(/^60 €\/h$/i)).toBeInTheDocument();
+    expect(screen.getByText(/cours débutant/i)).toBeInTheDocument();
+    expect(screen.getByText(/^40 à 60 €\/h$/i)).toBeInTheDocument();
+
+    expect(
+      screen.getByRole('link', {
+        name: /me contacter/i,
+      }),
+    ).toHaveAttribute('href', '/contact');
   });
 });
