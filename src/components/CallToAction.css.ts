@@ -2,6 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { semanticColors } from '@/styles/semanticColors.css';
 
 export const container = style({
+  width: '100%',
   marginTop: '3rem',
   paddingTop: '2rem',
 });
@@ -15,7 +16,6 @@ export const title = style({
 export const text = style({
   marginTop: 0,
   marginBottom: '1.25rem',
-  maxWidth: '42rem',
 });
 
 export const links = style({
