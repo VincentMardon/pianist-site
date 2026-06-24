@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 import { semanticColors } from '@/styles/semanticColors.css';
 
 export const footer = style({
-  marginTop: '4rem',
+  marginTop: 0,
   padding: '2rem 1rem',
   borderTop: `1px solid ${semanticColors.actionPrimaryDark}`,
   fontSize: '0.875rem',
