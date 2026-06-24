@@ -1,6 +1,10 @@
 export const primitiveColors = {
   ivory: '#F5F1E8',
-  ebony: '#0B0B0B',
+
+  ebony900: '#050505',
+  ebony800: '#0B0B0B',
+  ebony700: '#121212',
+  ebony600: '#181818',
 
   gold300: '#FEC94D',
   gold500: '#D8B564',

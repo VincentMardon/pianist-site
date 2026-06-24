@@ -2,7 +2,11 @@ import { primitiveColors } from './primitiveColors.css';
 
 export const semanticColors = {
   textPrimary: primitiveColors.ivory,
-  backgroundPrimary: primitiveColors.ebony,
+
+  backgroundPage: primitiveColors.ebony900,
+  backgroundPrimary: primitiveColors.ebony800,
+  backgroundSurface: primitiveColors.ebony700,
+  backgroundElevated: primitiveColors.ebony600,
 
   actionPrimaryLight: primitiveColors.gold300,
   actionPrimary: primitiveColors.gold500,

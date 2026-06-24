@@ -9,7 +9,7 @@ export const header = style({
   width: '100%',
 
   backgroundColor: semanticColors.backgroundPrimary,
-  boxShadow: '0 0.25rem 0.75rem rgb(255 255 255 / 0.05)',
+  boxShadow: '0 0.35rem 1rem rgb(0 0 0 / 0.45)',
   borderBottom: '1px solid rgb(255 255 255 /0.08)',
 });
 

@@ -13,7 +13,7 @@ globalStyle('html, body', {
   margin: 0,
   padding: 0,
   minHeight: '100vh',
-  backgroundColor: semanticColors.backgroundPrimary,
+  backgroundColor: semanticColors.backgroundPage,
   color: semanticColors.textPrimary,
 });
 
@@ -30,12 +30,21 @@ globalStyle('body', {
 
 globalStyle('main', {
   maxWidth: '900px',
-  margin: '0 auto',
-  padding: '2rem',
+  margin: '2rem auto',
+  padding: '2.25rem',
+
+  backgroundColor: semanticColors.backgroundPrimary,
+  border: '1px solid rgb(255 255 255 / 0.06)',
+  boxShadow: '0 1rem 2.5rem rgb(0 0 0 / 0.35)',
 
   '@media': {
+    '(max-width: 960px)': {
+      margin: '1rem',
+    },
+
     '(max-width: 640px)': {
       padding: '1.5rem 1rem',
+      margin: '0.75rem',
     },
   },
 });
