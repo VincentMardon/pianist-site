@@ -60,9 +60,3 @@ Cette approche peut convenir pour :
 - un travail d'interprétation ;
 - une aide à l'organisation du travail personnel ;
 - un projet musical amateur ou confirmé.
-
-## Prendre contact
-
-Les cours et accompagnements sont construits au cas par cas, selon les objectifs, le niveau, la disponibilité et le cadre de travail souhaité.
-
-Pour discuter d'une situation particulière, vous pouvez consulter les [tarifs](/tarifs) ou [me contacter directement](/contact).

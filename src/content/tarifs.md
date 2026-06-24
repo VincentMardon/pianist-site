@@ -44,9 +44,3 @@ Les concerts, créations, projets collectifs, interventions exceptionnelles ou d
 | Déplacement local | + 3 € |
 
 Les frais de déplacement peuvent être ajustés selon la distance, les horaires et les conditions d’intervention.
-
-## Demande de devis
-
-Pour toute demande d’accompagnement, de cours, de concert ou de projet spécifique, vous pouvez me contacter afin de préciser le cadre, les besoins et les disponibilités.
-
-[Me contacter](/contact)
