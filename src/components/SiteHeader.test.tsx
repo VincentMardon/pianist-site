@@ -18,7 +18,7 @@ describe('SiteHeader', () => {
 
     expect(
       screen.getByRole('link', {
-        name: /accueil/i,
+        name: /retour à l'accueil/i,
       }),
     ).toHaveAttribute('href', '/');
 
