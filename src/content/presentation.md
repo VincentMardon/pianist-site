@@ -16,6 +16,8 @@ Au fil des années, j'ai accompagné aussi bien des débutants que des élèves 
 
 Concernant l'enseignement, j'accorde une importance particulière à l'implication personnelle de l'élève. Je privilégie les personnes qui souhaitent s'investir sincèrement dans leur pratique, quels que soient leur âge, leur niveau ou leurs objectifs.
 
+Cette approche est détaillée plus précisément dans la page consacrée à ma [méthode pédagogique](/pedagogie)
+
 Aujourd'hui, je mets cette expérience au service des personnes qui recherchent un accompagnement sérieux, adaptable et humain.
 
 ## Ce que je peux vous apporter
@@ -40,3 +42,5 @@ Mon rôle consiste avant tout à comprendre ces attentes et à construire un cad
 Que votre univers soit celui du répertoire classique, de l'accompagnement instrumental, de la création, des musiques actuelles ou de la pratique amateur, je m'attache à mettre mon expérience au service de votre projet.
 
 Au-delà des styles et des parcours, ce qui m'intéresse reste toujours la même chose : aider la musique à prendre vie.
+
+Pour connaïtre les conditions pratiques d'un accomapgnement ou d'un cours, vous pouvez consulter les [tarifs](/tarifs) ou [me contacter directement](/contact).

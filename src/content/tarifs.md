@@ -27,6 +27,8 @@ Les cours sont construits selon le niveau, les objectifs et le degré d’autono
 
 Pour les débutants, un format de 30 minutes peut être plus adapté, notamment au départ, afin de garder une séance claire, concentrée et efficace. Pour les élèves plus avancés, les reprises sérieuses, le travail d’interprétation ou la préparation d’une œuvre, le tarif est ajusté selon le niveau d’exigence et le travail demandé.
 
+Pour mieux comprendre le cadre de travail proposé, vous pouvez consulter la page consacrée à [ma méthode pédagogique](/pedagogie).
+
 ## Concerts et projets spécifiques
 
 | Prestation                                               |     Tarif |

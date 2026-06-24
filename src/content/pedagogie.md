@@ -36,6 +36,8 @@ Je peux accompagner des élèves de niveaux différents, à condition qu'il y ai
 
 Je m'adresse aussi bien à des amateurs motivés qu'à des musiciens préparant une audition, un examen, un concours, une reprise sérieuse du piano ou un projet artistique personnel.
 
+Pour situer cette approche dans un cadre plus général, vous pouvez également consulter ma page de [présentation](/presentation).
+
 L'âge, le parcours ou le niveau de départ comptent moins que la sincérité de la démarche.
 
 ## Un cadre exigeant, mais bienveillant
@@ -63,4 +65,4 @@ Cette approche peut convenir pour :
 
 Les cours et accompagnements sont construits au cas par cas, selon les objectifs, le niveau, la disponibilité et le cadre de travail souhaité.
 
-Pour discuter d'une situation particulière, vous pouvez me contacter directement depuis la page dédiée.
+Pour discuter d'une situation particulière, vous pouvez consulter les [tarifs](/tarifs) ou [me contacter directement](/contact).
