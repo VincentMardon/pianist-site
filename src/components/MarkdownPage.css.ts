@@ -17,7 +17,7 @@ export const heading2 = style({
 
 export const paragraph = style({
   marginTop: 0,
-  marginBottom: '1rem',
+  marginBottom: '1.25rem',
 });
 
 export const link = style({
@@ -39,7 +39,7 @@ export const list = style({
 });
 
 export const listItem = style({
-  marginBottom: '0.4rem',
+  marginBottom: '0.5rem',
 });
 
 export const tableWrapper = style({

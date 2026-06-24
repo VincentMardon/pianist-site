@@ -20,7 +20,8 @@ globalStyle('html, body', {
 globalStyle('body', {
   fontFamily: 'var(--font-body), system-ui, sans-serif',
   fontWeight: 300,
-  lineHeight: 1.6,
+  lineHeight: 1.65,
+  letterSpacing: '0.01em',
 });
 
 /* ==================================
@@ -31,6 +32,12 @@ globalStyle('main', {
   maxWidth: '900px',
   margin: '0 auto',
   padding: '2rem',
+
+  '@media': {
+    '(max-width: 640px)': {
+      padding: '1.5rem 1rem',
+    },
+  },
 });
 
 /* ==================================
