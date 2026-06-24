@@ -1,6 +1,10 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import SiteHeader from './SiteHeader';
+
+vi.mock('next/navigation', () => ({
+  usePathname: () => '/pedagogie',
+}));
 
 describe('SiteHeader', () => {
   it('renders main navigation links', () => {
@@ -29,6 +33,12 @@ describe('SiteHeader', () => {
         name: /pédagogie/i,
       }),
     ).toHaveAttribute('href', '/pedagogie');
+
+    expect(
+      screen.getByRole('link', {
+        name: /pédagogie/i,
+      }),
+    ).toHaveAttribute('aria-current', 'page');
 
     expect(
       screen.getByRole('link', {
