@@ -15,7 +15,7 @@ export default function PresentationPage() {
 
       <CallToAction
         title="Un accompagnement à construire selon votre projet"
-        text="Pour une audition, un examen, un cours ou une répétition, les conditions pratiques oeuvent être adaptées à votre situation."
+        text="Pour une audition, un examen, un cours ou une répétition, les conditions pratiques peuvent être adaptées à votre situation."
         links={[
           { href: '/tarifs', label: 'Consulter les tarifs' },
           { href: '/contact', label: 'Me contacter' },
