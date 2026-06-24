@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function TarifsPage() {
   return (
     <>
-      <MarkdownPage fileName="tarifs.md" />;
+      <MarkdownPage fileName="tarifs.md" />
       <CallToAction
         title="Préciser une demande"
         text="Pour un accompagnement ponctuel, un cours, une répétition longue ou un projet spécifique, vous pouvez me contacter afin de définir le cadre le plus adapté"
