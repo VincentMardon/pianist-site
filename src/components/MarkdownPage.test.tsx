@@ -33,8 +33,8 @@ describe('MarkdownPage', () => {
 
     expect(
       screen.getByRole('link', {
-        name: /me contacter/i,
+        name: /ma méthode pédagogique/i,
       }),
-    ).toHaveAttribute('href', '/contact');
+    ).toHaveAttribute('href', '/pedagogie');
   });
 });
