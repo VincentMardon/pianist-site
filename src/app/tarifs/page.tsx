@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import CallToAction from '@/components/CallToAction';
 import MarkdownPage from '@/components/MarkdownPage';
 
 export const metadata: Metadata = {
@@ -8,5 +9,14 @@ export const metadata: Metadata = {
 };
 
 export default function TarifsPage() {
-  return <MarkdownPage fileName="tarifs.md" />;
+  return (
+    <>
+      <MarkdownPage fileName="tarifs.md" />;
+      <CallToAction
+        title="Préciser une demande"
+        text="Pour un accompagnement ponctuel, un cours, une répétition longue ou un projet spécifique, vous pouvez me contacter afin de définir le cadre le plus adapté"
+        links={[{ href: '/contact', label: 'Me contacter' }]}
+      />
+    </>
+  );
 }
