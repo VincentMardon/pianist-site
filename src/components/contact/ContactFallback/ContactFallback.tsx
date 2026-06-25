@@ -1,4 +1,4 @@
-import * as styles from './contact.css';
+import * as styles from './ContactFallback.css';
 
 export default function ContactFallback() {
   return (
@@ -9,7 +9,7 @@ export default function ContactFallback() {
       </p>
 
       <p className={styles.fallbackParagraph}>
-        Vous pouvez aussi consulter les <a href="/tarifs">Tarifs</a> avant de me préciser votre demande.
+        Vous pouvez aussi consulter les <a href="/tarifs">tarifs</a> avant de me préciser votre demande.
       </p>
     </aside>
   );

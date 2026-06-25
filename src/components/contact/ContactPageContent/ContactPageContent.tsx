@@ -1,6 +1,6 @@
-import ContactFallback from './ContactFallback';
-import ContactForm from './ContactForm';
-import * as styles from './contact.css';
+import ContactFallback from '@/components/contact/ContactFallback';
+import ContactForm from '@/components/contact/ContactForm';
+import * as styles from './ContactPageContent.css';
 
 type ContactPageContentProps = {
   isSent: boolean;
