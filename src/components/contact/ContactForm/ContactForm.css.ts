@@ -24,7 +24,16 @@ export const fieldGroup = style({
 export const label = style({
   fontSize: '0.9rem',
   fontWeight: 500,
-  color: semanticColors.actionPrimary,
+  color: semanticColors.textPrimary,
+
+  transition: 'color 160ms ease, text-shadow 160ms ease',
+
+  selectors: {
+    [`${fieldGroup}:focus-within &`]: {
+      color: semanticColors.actionPrimaryLight,
+      textShadow: '0 0 0.65rem rgb(216 181 100 / 0.22)',
+    },
+  },
 });
 
 export const input = style({
@@ -32,22 +41,25 @@ export const input = style({
   padding: '0.75rem 0.85rem',
 
   color: semanticColors.textPrimary,
-  backgroundColor: semanticColors.backgroundPrimary,
+  backgroundColor: 'transparent',
 
-  border: '1px solid rgb(255 255 255 / 0.12)',
-  borderRadius: '0.65rem',
+  border: '1px solid rgb(245 241 232 / 0.28)',
+  borderRadius: '0.95rem',
 
   font: 'inherit',
   fontSize: '0.95rem',
   lineHeight: 1.5,
+
+  boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.05)',
 
   transition: 'border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease',
 
   selectors: {
     '&:focus': {
       outline: 'none',
-      borderColor: semanticColors.actionPrimary,
-      boxShadow: '0 0 0 3px rgb(216 181 100 / 0.18)',
+      borderColor: semanticColors.actionPrimaryLight,
+      boxShadow:
+        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(216 181 100 / 0.22), inset 0 1px 0 rgb(245 241 232 / 0.14)',
     },
   },
 });
@@ -84,7 +96,7 @@ export const submitButton = style({
   lineHeight: 1.2,
 
   cursor: 'pointer',
-  boxShadow: '0 0.25rem 0.75rem rgb(0 0 0 / 0.18), inset 0 1px 0 rgb(245 421 232 / 0.08)',
+  boxShadow: '0 0.25rem 0.75rem rgb(0 0 0 / 0.18), inset 0 1px 0 rgb(245 241 232 / 0.08)',
 
   transition:
     'transform 140ms ease, color 140ms ease, border-color 140ms ease, border-width 140ms ease, background-color 140ms ease, box-shadow 140ms ease',
