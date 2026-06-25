@@ -2,7 +2,8 @@ import { style } from '@vanilla-extract/css';
 import { semanticColors } from '@/styles/semanticColors.css';
 
 export const contactSection = style({
-  maxWidth: '720px',
+  width: '100%',
+  maxWidth: '900px',
 });
 
 export const header = style({
