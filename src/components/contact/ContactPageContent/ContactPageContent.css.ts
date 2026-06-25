@@ -11,7 +11,7 @@ export const header = style({
 });
 
 export const introduction = style({
-  maxWidth: '62ch',
+  maxWidth: '900px',
   marginTop: 0,
   marginBottom: '0.75rem',
 });
