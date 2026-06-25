@@ -69,6 +69,11 @@ globalStyle('h2', {
   marginBottom: '1rem',
 });
 
+globalStyle('main p, main li, main td, main th', {
+  fontSize: '0.95rem',
+  lineHeight: 1.65,
+});
+
 globalStyle('main a', {
   color: semanticColors.actionPrimary,
   textDecoration: 'underline',
