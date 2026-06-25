@@ -9,14 +9,14 @@ export const header = style({
   width: '100%',
 
   backgroundColor: semanticColors.backgroundPrimary,
-  boxShadow: '0 0.35rem 1rem rgb(0 0 0 / 0.45)',
+  boxShadow: '0 0.55rem 1.4rem rgb(0 0 0 / 0.5)',
   borderBottom: '1px solid rgb(255 255 255 / 0.08)',
 });
 
 export const nav = style({
   maxWidth: '900px',
   margin: '0 auto',
-  padding: '1rem 2rem',
+  padding: '1.15rem 2.5rem',
 
   display: 'flex',
   alignItems: 'center',
@@ -26,7 +26,7 @@ export const nav = style({
 
   '@media': {
     '(max-width: 640px)': {
-      padding: '0.9rem 1rem',
+      padding: '1rem 1rem',
       gap: '0.75rem 1.25rem',
     },
   },
