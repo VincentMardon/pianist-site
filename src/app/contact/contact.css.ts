@@ -21,6 +21,36 @@ export const responseTime = style({
   color: semanticColors.actionPrimaryDark,
 });
 
+export const successMessage = style({
+  marginTop: '1.5rem',
+  marginBottom: 0,
+  padding: '0.9rem 1rem',
+
+  color: semanticColors.successLight,
+  backgroundColor: semanticColors.backgroundSurface,
+
+  border: `1px solid ${semanticColors.successDark}`,
+  borderRadius: '0.75rem',
+
+  fontSize: '0.95rem',
+  lineHeight: 1.5,
+});
+
+export const errorMessage = style({
+  marginTop: '1.5rem',
+  marginBottom: 0,
+  padding: '0.9rem 1rem',
+
+  color: semanticColors.dangerLight,
+  backgroundColor: semanticColors.backgroundSurface,
+
+  border: `1px solid ${semanticColors.dangerDark}`,
+  borderRadius: '0.75rem',
+
+  fontSize: '0.95rem',
+  lineHeight: 1.5,
+});
+
 export const form = style({
   display: 'flex',
   flexDirection: 'column',
@@ -79,6 +109,13 @@ export const textarea = style([
     resize: 'vertical',
   },
 ]);
+
+export const honeypot = style({
+  position: 'absolute',
+  left: '-9999px',
+  width: '1px',
+  overflow: 'hidden',
+});
 
 export const submitButton = style({
   alignSelf: 'flex-start',
