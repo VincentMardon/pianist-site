@@ -2,45 +2,16 @@
 
 import { useState } from 'react';
 import * as styles from './ContactForm.css';
+import ContactField from './ContactField';
+import ContactTextareaField from './ContactTextareaField';
 import type { FieldName, FieldValues, TouchedFields } from './contactFormTypes';
-import { getFieldError, getFieldStatus, initialValues, initialTouched } from './contactFormValidation';
-import { getClassName } from './getClassName';
+import { getFieldError, getFieldStatus, initialTouched, initialValues } from './contactFormValidation';
 
 export default function ContactForm() {
   const [values, setValues] = useState<FieldValues>(initialValues);
   const [touchedFields, setTouchedFields] = useState<TouchedFields>(initialTouched);
 
   const getStatus = (name: FieldName) => getFieldStatus(name, values, touchedFields);
-
-  const getFieldGroupClassName = (name: FieldName) => {
-    const status = getStatus(name);
-
-    return getClassName(
-      styles.fieldGroup,
-      status === 'valid' && styles.fieldGroupValid,
-      status === 'invalid' && styles.fieldGroupInvalid,
-    );
-  };
-
-  const getInputClassName = (name: FieldName, baseClassName = styles.input) => {
-    const status = getStatus(name);
-
-    return getClassName(
-      baseClassName,
-      status === 'valid' && styles.inputValid,
-      status === 'invalid' && styles.inputInvalid,
-    );
-  };
-
-  const getTextareaFrameClassName = () => {
-    const status = getStatus('message');
-
-    return getClassName(
-      styles.textareaFrame,
-      status === 'valid' && styles.textareaFrameValid,
-      status === 'invalid' && styles.textareaFrameInvalid,
-    );
-  };
 
   const handleChange = (name: FieldName, value: string) => {
     setValues((currentValues) => ({
@@ -64,6 +35,7 @@ export default function ContactForm() {
     }
 
     event.preventDefault();
+
     setTouchedFields({
       name: true,
       email: true,
@@ -72,107 +44,57 @@ export default function ContactForm() {
     });
   };
 
-  const renderErrorMessage = (name: FieldName) => {
-    const error = getFieldError(name, values[name]);
-
-    if (!touchedFields[name] || !error) {
-      return null;
-    }
-
-    return (
-      <p id={`${name}-error`} className={styles.fieldError}>
-        {error}
-      </p>
-    );
-  };
-
   return (
     <form className={styles.form} action="/api/contact" method="post" onSubmit={handleSubmit} noValidate>
-      <div className={getFieldGroupClassName('name')}>
-        <label htmlFor="name" className={styles.label}>
-          Nom
-        </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          className={getInputClassName('name')}
-          autoComplete="name"
-          placeholder="Votre nom"
-          value={values.name}
-          onChange={(event) => handleChange('name', event.currentTarget.value)}
-          onBlur={() => handleBlur('name')}
-          aria-invalid={getStatus('name') === 'invalid'}
-          aria-describedby={getStatus('name') === 'invalid' ? 'name-error' : undefined}
-          required
-        />
-        {renderErrorMessage('name')}
-      </div>
+      <ContactField
+        name="name"
+        label="Nom"
+        type="text"
+        value={values.name}
+        status={getStatus('name')}
+        error={getFieldError('name', values.name)}
+        autoComplete="name"
+        placeholder="Votre nom"
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
 
-      <div className={getFieldGroupClassName('email')}>
-        <label htmlFor="email" className={styles.label}>
-          Adresse email
-        </label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          className={getInputClassName('email')}
-          autoComplete="email"
-          placeholder="votre@email.fr"
-          value={values.email}
-          onChange={(event) => handleChange('email', event.currentTarget.value)}
-          onBlur={() => handleBlur('email')}
-          aria-invalid={getStatus('email') === 'invalid'}
-          aria-describedby={getStatus('email') === 'invalid' ? 'email-error' : undefined}
-          required
-        />
-        {renderErrorMessage('email')}
-      </div>
+      <ContactField
+        name="email"
+        label="Adresse email"
+        type="email"
+        value={values.email}
+        status={getStatus('email')}
+        error={getFieldError('email', values.email)}
+        autoComplete="email"
+        placeholder="votre@email.fr"
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
 
-      <div className={getFieldGroupClassName('subject')}>
-        <label htmlFor="subject" className={styles.label}>
-          Objet
-        </label>
-        <input
-          id="subject"
-          name="subject"
-          type="text"
-          className={getInputClassName('subject')}
-          placeholder="Objet de votre demande"
-          value={values.subject}
-          onChange={(event) => handleChange('subject', event.currentTarget.value)}
-          onBlur={() => handleBlur('subject')}
-          aria-invalid={getStatus('subject') === 'invalid'}
-          aria-describedby={getStatus('subject') === 'invalid' ? 'subject-error' : undefined}
-          required
-        />
-        {renderErrorMessage('subject')}
-      </div>
+      <ContactField
+        name="subject"
+        label="Objet"
+        type="text"
+        value={values.subject}
+        status={getStatus('subject')}
+        error={getFieldError('subject', values.subject)}
+        placeholder="Objet de votre demande"
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
 
-      <div className={getFieldGroupClassName('message')}>
-        <label htmlFor="message" className={styles.label}>
-          Message
-        </label>
-
-        <div className={getTextareaFrameClassName()}>
-          <textarea
-            id="message"
-            name="message"
-            rows={8}
-            className={getInputClassName('message', styles.textarea)}
-            placeholder="Votre message"
-            value={values.message}
-            onChange={(event) => handleChange('message', event.currentTarget.value)}
-            onBlur={() => handleBlur('message')}
-            aria-invalid={getStatus('message') === 'invalid'}
-            aria-describedby={getStatus('message') === 'invalid' ? 'message-error' : undefined}
-            required
-          />
-        </div>
-
-        {renderErrorMessage('message')}
-      </div>
+      <ContactTextareaField
+        name="message"
+        label="Message"
+        value={values.message}
+        status={getStatus('message')}
+        error={getFieldError('message', values.message)}
+        placeholder="Votre message"
+        rows={8}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
 
       <div className={styles.honeypot} aria-hidden="true">
         <label htmlFor="website">Site web</label>

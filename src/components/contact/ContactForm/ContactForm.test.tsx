@@ -56,7 +56,10 @@ describe('ContactForm validation', () => {
   it('reveals validation errors when submitting an empty form', () => {
     render(<ContactForm />);
 
-    fireEvent.click(screen.getByRole('button', { name: 'Envoyer' }));
+    const form = screen.getByRole('button', { name: 'Envoyer' }).closest('form');
+
+    expect(form).not.toBeNull();
+    fireEvent.submit(form!);
 
     expect(screen.getAllByText('Ce champ est requis.')).toHaveLength(4);
   });
