@@ -72,6 +72,12 @@ export default function ContactForm() {
     );
   }, [getCurrentFormValues]);
 
+  const scheduleAutofillSync = useCallback(() => {
+    window.setTimeout(() => {
+      syncAutofilledFields();
+    }, 0);
+  }, [syncAutofilledFields]);
+
   useEffect(() => {
     const animationFrameId = window.requestAnimationFrame(() => {
       syncAutofilledFields();
@@ -89,6 +95,8 @@ export default function ContactForm() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const currentFormValues = getCurrentFormValues();
+
+    setValues(currentFormValues);
 
     const errors = Object.entries(currentFormValues).filter(([fieldName, value]) =>
       getFieldError(fieldName as FieldName, value),
@@ -115,7 +123,8 @@ export default function ContactForm() {
       action="/api/contact"
       method="post"
       onSubmit={handleSubmit}
-      onFocusCapture={syncAutofilledFields}
+      onFocusCapture={scheduleAutofillSync}
+      onBlurCapture={scheduleAutofillSync}
       noValidate
     >
       <ContactField

@@ -95,6 +95,22 @@ export const inputValid = style({
       boxShadow:
         '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(50 181 18 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
     },
+
+    '&:-webkit-autofill': {
+      WebkitTextFillColor: semanticColors.textPrimary,
+      caretColor: semanticColors.textPrimary,
+      borderColor: semanticColors.success,
+      boxShadow: '0 0 0 1000px rgb(32 32 32) inset, inset 0 1px 0 rgb(245 241 232 / 0.08)',
+      transition: 'background-color 9999s ease-ini-out os',
+    },
+
+    '&:-webkit-autofill:focus': {
+      WebkitTextFillColor: semanticColors.textPrimary,
+      caretColor: semanticColors.textPrimary,
+      borderColor: semanticColors.successLight,
+      boxShadow:
+        '0 0 0 1000px rgb(32 32 32) inset, 0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(50 181 18 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
   },
 });
 
@@ -107,6 +123,22 @@ export const inputInvalid = style({
       borderColor: semanticColors.dangerLight,
       boxShadow:
         '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(218 29 29 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
+
+    '&:-webkit-autofill': {
+      WebkitTextFillColor: semanticColors.textPrimary,
+      caretColor: semanticColors.textPrimary,
+      borderColor: semanticColors.danger,
+      boxShadow: '0 0 0 1000px rgb(32 32 32) inset, inset 0 1px 0 rgb(245 241 232 / 0.08)',
+      transition: 'background-color 9999s ease-in-out 0s',
+    },
+
+    '&:-webkit-autofill:focus': {
+      WebkitTextFillColor: semanticColors.textPrimary,
+      caretColor: semanticColors.textPrimary,
+      borderColor: semanticColors.dangerLight,
+      boxShadow:
+        '0 0 0 1000px rgb(32 32 32) inset, 0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(218 29 29 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
     },
   },
 });
