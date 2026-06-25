@@ -1,13 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import * as styles from './ContactForm.css';
 import ContactField from './ContactField';
 import ContactTextareaField from './ContactTextareaField';
 import type { FieldName, FieldValues, TouchedFields } from './contactFormTypes';
 import { getFieldError, getFieldStatus, initialTouched, initialValues } from './contactFormValidation';
+import ContactSubmitButton from './ContactSubmitButton';
+
+const fieldNames: FieldName[] = ['name', 'email', 'subject', 'message'];
 
 export default function ContactForm() {
+  const formRef = useRef<HTMLFormElement>(null);
   const [values, setValues] = useState<FieldValues>(initialValues);
   const [touchedFields, setTouchedFields] = useState<TouchedFields>(initialTouched);
 
@@ -27,8 +31,68 @@ export default function ContactForm() {
     }));
   };
 
+  const getCurrentFormValues = useCallback(() => {
+    const form = formRef.current;
+
+    if (!form) {
+      return initialValues;
+    }
+
+    const formData = new FormData(form);
+
+    return fieldNames.reduce<FieldValues>((currentValues, fieldName) => {
+      const value = formData.get(fieldName);
+
+      return {
+        ...currentValues,
+        [fieldName]: typeof value === 'string' ? value : '',
+      };
+    }, initialValues);
+  }, []);
+
+  const syncAutofilledFields = useCallback(() => {
+    const currentFormValues = getCurrentFormValues();
+
+    const hasAutofilledValue = fieldNames.some((fieldName) => currentFormValues[fieldName].trim());
+
+    if (!hasAutofilledValue) {
+      return;
+    }
+
+    setValues(currentFormValues);
+
+    setTouchedFields((currentTouchedFields) =>
+      fieldNames.reduce<TouchedFields>(
+        (nextTouchedFields, fieldName) => ({
+          ...nextTouchedFields,
+          [fieldName]: currentTouchedFields[fieldName] || Boolean(currentFormValues[fieldName].trim()),
+        }),
+        currentTouchedFields,
+      ),
+    );
+  }, [getCurrentFormValues]);
+
+  useEffect(() => {
+    const animationFrameId = window.requestAnimationFrame(() => {
+      syncAutofilledFields();
+    });
+
+    const timeoutId = window.setTimeout(() => {
+      syncAutofilledFields();
+    }, 300);
+
+    return () => {
+      window.cancelAnimationFrame(animationFrameId);
+      window.clearTimeout(timeoutId);
+    };
+  }, [syncAutofilledFields]);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    const errors = Object.entries(values).filter(([fieldName, value]) => getFieldError(fieldName as FieldName, value));
+    const currentFormValues = getCurrentFormValues();
+
+    const errors = Object.entries(currentFormValues).filter(([fieldName, value]) =>
+      getFieldError(fieldName as FieldName, value),
+    );
 
     if (errors.length === 0) {
       return;
@@ -45,7 +109,15 @@ export default function ContactForm() {
   };
 
   return (
-    <form className={styles.form} action="/api/contact" method="post" onSubmit={handleSubmit} noValidate>
+    <form
+      ref={formRef}
+      className={styles.form}
+      action="/api/contact"
+      method="post"
+      onSubmit={handleSubmit}
+      onFocusCapture={syncAutofilledFields}
+      noValidate
+    >
       <ContactField
         name="name"
         label="Nom"
@@ -101,9 +173,7 @@ export default function ContactForm() {
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <button type="submit" className={styles.submitButton}>
-        Envoyer
-      </button>
+      <ContactSubmitButton />
     </form>
   );
 }

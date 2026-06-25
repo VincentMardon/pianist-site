@@ -1,4 +1,5 @@
-import * as styles from './ContactForm.css';
+import * as fieldStyles from './ContactField.css';
+import * as textareaStyles from './ContactTextareaField.css';
 import type { FieldName, FieldStatus } from './contactFormTypes';
 import { getClassName } from './getClassName';
 
@@ -26,21 +27,21 @@ export default function ContactTextareaField({
   onBlur,
 }: ContactTextareaFieldProps) {
   const fieldGroupClassName = getClassName(
-    styles.fieldGroup,
-    status === 'valid' && styles.fieldGroupValid,
-    status === 'invalid' && styles.fieldGroupInvalid,
+    fieldStyles.fieldGroup,
+    status === 'valid' && fieldStyles.fieldGroupValid,
+    status === 'invalid' && fieldStyles.fieldGroupInvalid,
   );
 
   const textareaClassName = getClassName(
-    styles.textarea,
-    status === 'valid' && styles.inputValid,
-    status === 'invalid' && styles.inputInvalid,
+    textareaStyles.textarea,
+    status === 'valid' && fieldStyles.inputValid,
+    status === 'invalid' && fieldStyles.inputInvalid,
   );
 
   const textareaFrameClassName = getClassName(
-    styles.textareaFrame,
-    status === 'valid' && styles.textareaFrameValid,
-    status === 'invalid' && styles.textareaFrameInvalid,
+    textareaStyles.textareaFrame,
+    status === 'valid' && textareaStyles.textareaFrameValid,
+    status === 'invalid' && textareaStyles.textareaFrameInvalid,
   );
 
   const isInvalid = status === 'invalid';
@@ -48,7 +49,7 @@ export default function ContactTextareaField({
 
   return (
     <div className={fieldGroupClassName}>
-      <label htmlFor={name} className={styles.label}>
+      <label htmlFor={name} className={fieldStyles.label}>
         {label}
       </label>
 
@@ -69,7 +70,7 @@ export default function ContactTextareaField({
       </div>
 
       {isInvalid && error && (
-        <p id={errorId} className={styles.fieldError}>
+        <p id={errorId} className={fieldStyles.fieldError}>
           {error}
         </p>
       )}

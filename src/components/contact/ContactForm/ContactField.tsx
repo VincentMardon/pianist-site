@@ -1,4 +1,4 @@
-import * as styles from './ContactForm.css';
+import * as styles from './ContactField.css';
 import type { FieldName, FieldStatus } from './contactFormTypes';
 import { getClassName } from './getClassName';
 
