@@ -29,9 +29,44 @@ export const label = style({
   transition: 'color 160ms ease, text-shadow 160ms ease',
 
   selectors: {
+    /**
+     * Neutral focus
+     */
     [`${fieldGroup}:focus-within &`]: {
       color: semanticColors.actionPrimaryLight,
       textShadow: '0 0 0.65rem rgb(216 181 100 / 0.22)',
+    },
+
+    /**
+     * Valid unfocus
+     */
+    [`${fieldGroup}:has(:not(:placeholder-shown):valid) &`]: {
+      color: semanticColors.success,
+      textShadow: 'none',
+    },
+
+    /**
+     * Valid focus
+     */
+    [`${fieldGroup}:has(:not(:placehorlder-shown):valid:focus) &`]: {
+      color: semanticColors.successLight,
+      textShadow: '0 0 0.65rem rgb(50 181 18 / 0.24)',
+    },
+
+    /**
+     * Invalid unfocus
+     */
+    [`${fieldGroup}:has(:not(:placehoder-shown):invalid) &`]: {
+      color: semanticColors.danger,
+      textShadow: 'none',
+    },
+
+    /**
+     * Invalid focus
+     */
+    [`${fieldGroup}:has(:not(:placeholder-shown):invalid:focus) &`]: {
+      color: semanticColors.dangerLight,
+      textShadow: '0 0 0.65rem rgb(218 29 29 / 0.24)',
     },
   },
 });
@@ -50,16 +85,74 @@ export const input = style({
   fontSize: '0.95rem',
   lineHeight: 1.5,
 
+  caretColor: semanticColors.textPrimary,
   boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.05)',
 
   transition: 'border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease',
 
   selectors: {
+    '&::placeholder': {
+      color: 'rgb(245 241 232 / 0.42)',
+    },
+
+    /**
+     * Neutral focus : Empty field or not already validated.
+     */
     '&:focus': {
       outline: 'none',
       borderColor: semanticColors.actionPrimaryLight,
       boxShadow:
         '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(216 181 100 / 0.22), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
+
+    /**
+     * Valid unfocus: only color, not glow
+     */
+    '&:not(:placeholder-shown):valid': {
+      borderColor: semanticColors.success,
+      boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.08)',
+    },
+
+    /**
+     * Valid focus: Light green + green glow
+     */
+    '&:not(:placeholder-shown):valid:focus': {
+      borderColor: semanticColors.successLight,
+      boxShadow:
+        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(50 181 18 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
+
+    /**
+     * Invalid unfocus: Only color, not glow
+     */
+    '&:not(:placeholder-shown):invalid': {
+      borderColor: semanticColors.danger,
+      boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.08)',
+    },
+
+    /**
+     * Invalid focus: Light red + red glow
+     */
+    '&:not(:placeholder-shown):invalid:focus': {
+      borderColor: semanticColors.dangerLight,
+      boxShadow:
+        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(218 29 29 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
+
+    '&:-webkit-autofill': {
+      WebkitTextFillColor: semanticColors.textPrimary,
+      caretColor: semanticColors.textPrimary,
+      boxShadow: '0 0 0 1000px rgb(32 32 32) inset, inset 0 1px 0 rgb(245 241 232 / 0.1)',
+      borderColor: 'rgb(245 241 232 / 0.28)',
+      transition: 'background-color 9999s ease-in-out 0s',
+    },
+
+    '&:-webkit-autofill:focus': {
+      WebkitTextFillColor: semanticColors.textPrimary,
+      caretColor: semanticColors.textPrimary,
+      borderColor: semanticColors.actionPrimaryLight,
+      boxShadow:
+        '0 0 0 1000px rgb(32 32 32) inset, 0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(216 181 100 / 0.22), inset 0 1px rgb(245 241 232 / 0.14)',
     },
   },
 });

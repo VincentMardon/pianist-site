@@ -7,28 +7,61 @@ export default function ContactForm() {
         <label htmlFor="name" className={styles.label}>
           Nom
         </label>
-        <input id="name" name="name" type="text" className={styles.input} autoComplete="name" required />
+        <input
+          id="name"
+          name="name"
+          type="text"
+          className={styles.input}
+          autoComplete="name"
+          placeholder="Votre nom"
+          minLength={2}
+          required
+        />
       </div>
 
       <div className={styles.fieldGroup}>
         <label htmlFor="email" className={styles.label}>
           Adresse email
         </label>
-        <input id="email" name="email" type="email" className={styles.input} autoComplete="email" required />
+        <input
+          id="email"
+          name="email"
+          type="email"
+          className={styles.input}
+          autoComplete="email"
+          placeholder="votre@email.fr"
+          required
+        />
       </div>
 
       <div className={styles.fieldGroup}>
         <label htmlFor="subject" className={styles.label}>
           Objet
         </label>
-        <input id="subject" name="subject" type="text" className={styles.input} required />
+        <input
+          id="subject"
+          name="subject"
+          type="text"
+          className={styles.input}
+          placeholder="Objet de votre demande"
+          minLength={3}
+          required
+        />
       </div>
 
       <div className={styles.fieldGroup}>
         <label htmlFor="message" className={styles.label}>
           Message
         </label>
-        <textarea id="message" name="message" rows={8} className={styles.textarea} required />
+        <textarea
+          id="message"
+          name="message"
+          rows={8}
+          className={styles.textarea}
+          placeholder="Votre message"
+          minLength={10}
+          required
+        />
       </div>
 
       <div className={styles.honeypot} aria-hidden="true">
