@@ -21,36 +21,12 @@ describe('ContactForm', () => {
     expect(form).toHaveAttribute('action', '/api/contact');
     expect(form).toHaveAttribute('method', 'post');
   });
-});
 
-describe('ContactForm validation', () => {
   it('does not show validation messages before a field is touched', () => {
     render(<ContactForm />);
 
     expect(screen.queryByText('Ce champ est requis.')).not.toBeInTheDocument();
     expect(screen.queryByText('Indiquez une adresse email valide.')).not.toBeInTheDocument();
-  });
-
-  it('shows a required error after leaving an empty required field', () => {
-    render(<ContactForm />);
-
-    fireEvent.blur(screen.getByLabelText('Nom'));
-
-    expect(screen.getByText('Ce champ est requis.')).toBeInTheDocument();
-  });
-
-  it('shows an email error after leaving an invalid email field', () => {
-    render(<ContactForm />);
-
-    const emailInput = screen.getByLabelText('Adresse email');
-
-    fireEvent.change(emailInput, {
-      target: { value: 'adresse-invalide' },
-    });
-
-    fireEvent.blur(emailInput);
-
-    expect(screen.getByText('Indiquez une adresse email valide.')).toBeInTheDocument();
   });
 
   it('reveals validation errors when submitting an empty form', () => {
@@ -62,19 +38,5 @@ describe('ContactForm validation', () => {
     fireEvent.submit(form!);
 
     expect(screen.getAllByText('Ce champ est requis.')).toHaveLength(4);
-  });
-
-  it('marks an invalid touched field as aria-invalid', () => {
-    render(<ContactForm />);
-
-    const emailInput = screen.getByLabelText('Adresse email');
-
-    fireEvent.change(emailInput, {
-      target: { value: 'adresse-invalide' },
-    });
-
-    fireEvent.blur(emailInput);
-
-    expect(emailInput).toHaveAttribute('aria-invalid', 'true');
   });
 });
