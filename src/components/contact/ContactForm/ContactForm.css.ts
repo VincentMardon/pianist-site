@@ -21,6 +21,10 @@ export const fieldGroup = style({
   gap: '0.45rem',
 });
 
+export const fieldGroupValid = style({});
+
+export const fieldGroupInvalid = style({});
+
 export const label = style({
   fontSize: '0.9rem',
   fontWeight: 500,
@@ -29,42 +33,17 @@ export const label = style({
   transition: 'color 160ms ease, text-shadow 160ms ease',
 
   selectors: {
-    /**
-     * Neutral focus
-     */
     [`${fieldGroup}:focus-within &`]: {
       color: semanticColors.actionPrimaryLight,
       textShadow: '0 0 0.65rem rgb(216 181 100 / 0.22)',
     },
 
-    /**
-     * Valid unfocus
-     */
-    [`${fieldGroup}:has(:not(:placeholder-shown):valid) &`]: {
-      color: semanticColors.success,
-      textShadow: 'none',
-    },
-
-    /**
-     * Valid focus
-     */
-    [`${fieldGroup}:has(:not(:placehorlder-shown):valid:focus) &`]: {
+    [`${fieldGroupValid}:focus-within &`]: {
       color: semanticColors.successLight,
       textShadow: '0 0 0.65rem rgb(50 181 18 / 0.24)',
     },
 
-    /**
-     * Invalid unfocus
-     */
-    [`${fieldGroup}:has(:not(:placehoder-shown):invalid) &`]: {
-      color: semanticColors.danger,
-      textShadow: 'none',
-    },
-
-    /**
-     * Invalid focus
-     */
-    [`${fieldGroup}:has(:not(:placeholder-shown):invalid:focus) &`]: {
+    [`${fieldGroupInvalid}:focus-within &`]: {
       color: semanticColors.dangerLight,
       textShadow: '0 0 0.65rem rgb(218 29 29 / 0.24)',
     },
@@ -95,48 +74,11 @@ export const input = style({
       color: 'rgb(245 241 232 / 0.42)',
     },
 
-    /**
-     * Neutral focus : Empty field or not already validated.
-     */
     '&:focus': {
       outline: 'none',
       borderColor: semanticColors.actionPrimaryLight,
       boxShadow:
         '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(216 181 100 / 0.22), inset 0 1px 0 rgb(245 241 232 / 0.14)',
-    },
-
-    /**
-     * Valid unfocus: only color, not glow
-     */
-    '&:not(:placeholder-shown):valid': {
-      borderColor: semanticColors.success,
-      boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.08)',
-    },
-
-    /**
-     * Valid focus: Light green + green glow
-     */
-    '&:not(:placeholder-shown):valid:focus': {
-      borderColor: semanticColors.successLight,
-      boxShadow:
-        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(50 181 18 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
-    },
-
-    /**
-     * Invalid unfocus: Only color, not glow
-     */
-    '&:not(:placeholder-shown):invalid': {
-      borderColor: semanticColors.danger,
-      boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.08)',
-    },
-
-    /**
-     * Invalid focus: Light red + red glow
-     */
-    '&:not(:placeholder-shown):invalid:focus': {
-      borderColor: semanticColors.dangerLight,
-      boxShadow:
-        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(218 29 29 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
     },
 
     '&:-webkit-autofill': {
@@ -157,13 +99,86 @@ export const input = style({
   },
 });
 
+export const inputValid = style({
+  borderColor: semanticColors.success,
+  boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.08)',
+
+  selectors: {
+    '&:focus': {
+      borderColor: semanticColors.successLight,
+      boxShadow:
+        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(50 181 18 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
+  },
+});
+
+export const inputInvalid = style({
+  borderColor: semanticColors.danger,
+  boxShadow: 'inset 0 1px 0 rgb(245 241 232 / 0.08)',
+
+  selectors: {
+    '&:focus': {
+      borderColor: semanticColors.dangerLight,
+      boxShadow:
+        '0 0.45rem 1rem rgb(0 0 0 / 0.26), 0 0 1rem rgb(218 29 29 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+    },
+  },
+});
+
 export const textarea = style([
   input,
   {
     minHeight: '12rem',
-    resize: 'vertical',
+    resize: 'none',
   },
 ]);
+
+export const textareaFrame = style({
+  position: 'relative',
+  color: 'rgb(245 241 232 / 0.28)',
+
+  selectors: {
+    '&:focus-within': {
+      color: semanticColors.actionPrimaryLight,
+    },
+
+    '&::after': {
+      content: '',
+      position: 'absolute',
+      right: '0.55rem',
+      bottom: '1.1rem',
+
+      width: '0.55rem',
+      height: '0.55rem',
+
+      backgroundColor: 'currentColor',
+      clipPath: 'polygon(100% 0, 0 100%, 100% 100%)',
+      opacity: 0.8,
+
+      pointerEvents: 'none',
+    },
+  },
+});
+
+export const textareaFrameValid = style({
+  color: semanticColors.success,
+
+  selectors: {
+    '&:focus-within': {
+      color: semanticColors.successLight,
+    },
+  },
+});
+
+export const textareaFrameInvalid = style({
+  color: semanticColors.danger,
+
+  selectors: {
+    '&:focus-within': {
+      color: semanticColors.dangerLight,
+    },
+  },
+});
 
 export const honeypot = style({
   position: 'absolute',
@@ -218,4 +233,16 @@ export const submitButton = style({
       outlineOffset: '0.25rem',
     },
   },
+});
+
+export const fieldError = style({
+  marginTop: '-0.1rem',
+  marginBottom: 0,
+
+  color: semanticColors.dangerLight,
+
+  fontSize: '0.85rem',
+  lineHeight: 1.45,
+
+  textShadow: '0 0 0.5rem rgb(218 29 29 / 0.16)',
 });
