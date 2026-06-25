@@ -27,7 +27,7 @@ describe('ContactForm validation', () => {
   it('does not show validation messages before a field is touched', () => {
     render(<ContactForm />);
 
-    expect(screen.queryByText('Ce champ est requies.')).not.toBeInTheDocument();
+    expect(screen.queryByText('Ce champ est requis.')).not.toBeInTheDocument();
     expect(screen.queryByText('Indiquez une adresse email valide.')).not.toBeInTheDocument();
   });
 

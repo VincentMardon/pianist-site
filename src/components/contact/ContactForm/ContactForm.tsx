@@ -2,67 +2,15 @@
 
 import { useState } from 'react';
 import * as styles from './ContactForm.css';
-
-type FieldName = 'name' | 'email' | 'subject' | 'message';
-
-type FieldValues = Record<FieldName, string>;
-type TouchedFields = Record<FieldName, boolean>;
-
-const initialValues: FieldValues = {
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
-};
-
-const initialTouched: TouchedFields = {
-  name: false,
-  email: false,
-  subject: false,
-  message: false,
-};
-
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-const getFieldError = (name: FieldName, value: string) => {
-  const trimmedValue = value.trim();
-
-  if (!trimmedValue) {
-    return 'Ce champ est requis.';
-  }
-
-  if (name === 'name' && trimmedValue.length < 2) {
-    return 'Le nom doit contenir au moins 2 caractères.';
-  }
-
-  if (name === 'email' && !emailRegex.test(trimmedValue)) {
-    return 'Indiquez une adresse email valide.';
-  }
-
-  if (name === 'subject' && trimmedValue.length < 3) {
-    return "L'objet doit contenir au moins 3 caractères.";
-  }
-
-  if (name === 'message' && trimmedValue.length < 10) {
-    return 'Le message doit contenir au moins 10 caractères.';
-  }
-
-  return '';
-};
-
-const getClassName = (...classNames: Array<string | false>) => classNames.filter(Boolean).join(' ');
+import type { FieldName, FieldValues, TouchedFields } from './contactFormTypes';
+import { getFieldError, getFieldStatus, initialValues, initialTouched } from './contactFormValidation';
+import { getClassName } from './getClassName';
 
 export default function ContactForm() {
   const [values, setValues] = useState<FieldValues>(initialValues);
   const [touchedFields, setTouchedFields] = useState<TouchedFields>(initialTouched);
 
-  const getStatus = (name: FieldName) => {
-    if (!touchedFields[name]) {
-      return 'idle';
-    }
-
-    return getFieldError(name, values[name]) ? 'invalid' : 'valid';
-  };
+  const getStatus = (name: FieldName) => getFieldStatus(name, values, touchedFields);
 
   const getFieldGroupClassName = (name: FieldName) => {
     const status = getStatus(name);
