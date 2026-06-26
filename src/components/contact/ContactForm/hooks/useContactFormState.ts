@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import type { FieldName, FieldValues, TouchedFields } from '../model/contactFormTypes';
-import { getFieldStatus, initialTouched, initialValues } from '../model/contactFormValidation';
+import type { FieldName, FieldValues, TouchedFields } from '@/lib/contact/contactFormTypes';
+import { getFieldStatus, initialTouched, initialValues } from '@/lib/contact/contactFormValidation';
 
 export function useContactFormState() {
   const [values, setValues] = useState<FieldValues>(initialValues);

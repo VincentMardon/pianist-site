@@ -1,7 +1,6 @@
 import { useCallback, useEffect } from 'react';
-import { fieldNames } from '../model/contactFormFields';
-import type { FieldValues, TouchedFields } from '../model/contactFormTypes';
-import { initialValues } from '../model/contactFormValidation';
+import type { FieldValues, TouchedFields } from '@/lib/contact/contactFormTypes';
+import { fieldNames, initialValues } from '@/lib/contact/contactFormValidation';
 
 type UseAutofillSyncParameters = {
   formRef: React.RefObject<HTMLFormElement | null>;

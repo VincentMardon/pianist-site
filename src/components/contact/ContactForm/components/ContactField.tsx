@@ -1,5 +1,5 @@
 import * as styles from './ContactField.css';
-import type { FieldName, FieldStatus } from '../model/contactFormTypes';
+import type { FieldName, FieldStatus } from '@/lib/contact/contactFormTypes';
 import { getClassName } from '../utils/getClassName';
 
 type ContactFieldProps = {

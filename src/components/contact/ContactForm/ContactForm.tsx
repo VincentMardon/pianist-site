@@ -8,8 +8,8 @@ import ContactTextareaField from './components/ContactTextareaField';
 import HoneypotField from './components/HoneypotField';
 import { useAutofillSync } from './hooks/useAutofillSync';
 import { useContactFormState } from './hooks/useContactFormState';
-import { contactFields, fieldNames } from './model/contactFormFields';
-import { getFieldError } from './model/contactFormValidation';
+import { contactFields } from './model/contactFormFields';
+import { fieldNames, getFieldError } from '@/lib/contact/contactFormValidation';
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);

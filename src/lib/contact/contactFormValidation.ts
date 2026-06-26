@@ -14,6 +14,8 @@ export const initialTouched: TouchedFields = {
   message: false,
 };
 
+export const fieldNames = ['name', 'email', 'subject', 'message'] as const satisfies readonly FieldName[];
+
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const getFieldError = (name: FieldName, value: string) => {
@@ -49,3 +51,19 @@ export const getFieldStatus = (name: FieldName, values: FieldValues, touchedFiel
 
   return getFieldError(name, values[name]) ? 'invalid' : 'valid';
 };
+
+export const getContactFormErrors = (values: FieldValues) =>
+  fieldNames.reduce<Partial<Record<FieldName, string>>>((errors, fieldName) => {
+    const error = getFieldError(fieldName, values[fieldName]);
+
+    if (!error) {
+      return errors;
+    }
+
+    return {
+      ...errors,
+      [fieldName]: error,
+    };
+  }, {});
+
+export const isValidContactForm = (values: FieldValues) => Object.keys(getContactFormErrors(values)).length === 0;

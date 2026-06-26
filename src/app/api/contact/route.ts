@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
+import type { FieldValues } from '@/lib/contact/contactFormTypes';
+import { isValidContactForm } from '@/lib/contact/contactFormValidation';
 
 const getFormValue = (formData: FormData, key: string) => {
   const value = formData.get(key);
@@ -25,17 +27,20 @@ export async function POST(request: Request) {
   const contactToEmail = process.env.CONTACT_TO_EMAIL;
   const contactFromEmail = process.env.CONTACT_FROM_EMAIL;
 
-  const name = getFormValue(formData, 'name');
-  const email = getFormValue(formData, 'email');
-  const subject = getFormValue(formData, 'subject');
-  const message = getFormValue(formData, 'message');
+  const values: FieldValues = {
+    name: getFormValue(formData, 'name'),
+    email: getFormValue(formData, 'email'),
+    subject: getFormValue(formData, 'subject'),
+    message: getFormValue(formData, 'message'),
+  };
+
   const website = getFormValue(formData, 'website');
 
   if (website) {
     return redirectToContact(request, 'sent');
   }
 
-  if (!name || !email || !subject || !message) {
+  if (!isValidContactForm(values)) {
     return redirectToContact(request, 'error');
   }
 
@@ -48,15 +53,15 @@ export async function POST(request: Request) {
   const { error } = await resend.emails.send({
     from: contactFromEmail,
     to: contactToEmail,
-    replyTo: email,
-    subject: `Nouveau message - ${subject}`,
+    replyTo: values.email,
+    subject: `Nouveau message - ${values.subject}`,
     text: `
-      Nom : ${name}
-      Email : ${email}
-      Objet : ${subject}
+      Nom : ${values.name}
+      Email : ${values.email}
+      Objet : ${values.subject}
 
       Message :
-      ${message}
+      ${values.message}
     `.trim(),
   });
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getFieldError } from './contactFormValidation';
+import { getFieldError, isValidContactForm } from './contactFormValidation';
 
 describe('getFieldError', () => {
   it('requires every field', () => {
@@ -18,5 +18,27 @@ describe('getFieldError', () => {
     expect(getFieldError('name', 'V')).toBe('Le nom doit contenir au moins 2 caractères.');
     expect(getFieldError('subject', 'ok')).toBe("L'objet doit contenir au moins 3 caractères.");
     expect(getFieldError('message', 'To short')).toBe('Le message doit contenir au moins 10 caractères.');
+  });
+
+  it('validates complete contact form value', () => {
+    expect(
+      isValidContactForm({
+        name: 'Vincent',
+        email: 'vincent@example.fr',
+        subject: 'Cours',
+        message: 'Bonjour, je cherche un cours de piano.',
+      }),
+    ).toBe(true);
+  });
+
+  it('rejects invalid contact form values', () => {
+    expect(
+      isValidContactForm({
+        name: 'V',
+        email: 'not-an-email',
+        subject: 'Ok',
+        message: 'Court',
+      }),
+    ).toBe(false);
   });
 });

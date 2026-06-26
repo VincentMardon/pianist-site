@@ -1,6 +1,6 @@
 import * as fieldStyles from './ContactField.css';
 import * as textareaStyles from './ContactTextareaField.css';
-import type { FieldName, FieldStatus } from '../model/contactFormTypes';
+import type { FieldName, FieldStatus } from '@/lib/contact/contactFormTypes';
 import { getClassName } from '../utils/getClassName';
 
 type ContactTextareaFieldProps = {

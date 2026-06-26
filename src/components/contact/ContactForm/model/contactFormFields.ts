@@ -1,4 +1,4 @@
-import type { FieldName } from './contactFormTypes';
+import type { FieldName } from '@/lib/contact/contactFormTypes';
 type ContactFieldConfig = {
   name: Exclude<FieldName, 'message'>;
   label: string;
@@ -6,8 +6,6 @@ type ContactFieldConfig = {
   placeholder: string;
   autoComplete?: string;
 };
-
-export const fieldNames = ['name', 'email', 'subject', 'message'] as const;
 
 export const contactFields = [
   {
