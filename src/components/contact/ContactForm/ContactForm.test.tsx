@@ -53,4 +53,18 @@ describe('ContactForm', () => {
 
     expect(screen.queryByText('Ce champ est requis.')).not.toBeInTheDocument();
   });
+
+  it('updates a touched field from invalid to valid when its value becomes valid', () => {
+    render(<ContactForm />);
+
+    const nameInput = screen.getByLabelText('Nom');
+
+    fireEvent.blur(nameInput);
+
+    expect(screen.getByText('Ce champ est requis.')).toBeInTheDocument();
+
+    fireEvent.change(nameInput, { target: { value: 'Vincent' } });
+
+    expect(screen.queryByText('Ce champ est requis.')).not.toBeInTheDocument();
+  });
 });
