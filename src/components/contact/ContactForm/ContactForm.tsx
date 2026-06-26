@@ -1,119 +1,41 @@
 'use client';
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import * as styles from './ContactForm.css';
-import ContactField from './ContactField';
-import ContactTextareaField from './ContactTextareaField';
-import type { FieldName, FieldValues, TouchedFields } from './contactFormTypes';
-import { getFieldError, getFieldStatus, initialTouched, initialValues } from './contactFormValidation';
-import ContactSubmitButton from './ContactSubmitButton';
-
-const fieldNames: FieldName[] = ['name', 'email', 'subject', 'message'];
+import ContactField from './components/ContactField';
+import ContactSubmitButton from './components/ContactSubmitButton';
+import ContactTextareaField from './components/ContactTextareaField';
+import HoneypotField from './components/HoneypotField';
+import { useAutofillSync } from './hooks/useAutofillSync';
+import { useContactFormState } from './hooks/useContactFormState';
+import { contactFields, fieldNames } from './model/contactFormFields';
+import { getFieldError } from './model/contactFormValidation';
 
 export default function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
-  const [values, setValues] = useState<FieldValues>(initialValues);
-  const [touchedFields, setTouchedFields] = useState<TouchedFields>(initialTouched);
 
-  const getStatus = (name: FieldName) => getFieldStatus(name, values, touchedFields);
+  const { values, setValues, setTouchedFields, getStatus, handleChange, handleBlur, touchAllFields } =
+    useContactFormState();
 
-  const handleChange = (name: FieldName, value: string) => {
-    setValues((currentValues) => ({
-      ...currentValues,
-      [name]: value,
-    }));
-  };
-
-  const handleBlur = (name: FieldName) => {
-    setTouchedFields((currentTouchedFields) => ({
-      ...currentTouchedFields,
-      [name]: true,
-    }));
-  };
-
-  const getCurrentFormValues = useCallback(() => {
-    const form = formRef.current;
-
-    if (!form) {
-      return initialValues;
-    }
-
-    const formData = new FormData(form);
-
-    return fieldNames.reduce<FieldValues>((currentValues, fieldName) => {
-      const value = formData.get(fieldName);
-
-      return {
-        ...currentValues,
-        [fieldName]: typeof value === 'string' ? value : '',
-      };
-    }, initialValues);
-  }, []);
-
-  const syncAutofilledFields = useCallback(() => {
-    const currentFormValues = getCurrentFormValues();
-
-    const hasAutofilledValue = fieldNames.some((fieldName) => currentFormValues[fieldName].trim());
-
-    if (!hasAutofilledValue) {
-      return;
-    }
-
-    setValues(currentFormValues);
-
-    setTouchedFields((currentTouchedFields) =>
-      fieldNames.reduce<TouchedFields>(
-        (nextTouchedFields, fieldName) => ({
-          ...nextTouchedFields,
-          [fieldName]: currentTouchedFields[fieldName] || Boolean(currentFormValues[fieldName].trim()),
-        }),
-        currentTouchedFields,
-      ),
-    );
-  }, [getCurrentFormValues]);
-
-  const scheduleAutofillSync = useCallback(() => {
-    window.setTimeout(() => {
-      syncAutofilledFields();
-    }, 0);
-  }, [syncAutofilledFields]);
-
-  useEffect(() => {
-    const animationFrameId = window.requestAnimationFrame(() => {
-      syncAutofilledFields();
-    });
-
-    const timeoutId = window.setTimeout(() => {
-      syncAutofilledFields();
-    }, 300);
-
-    return () => {
-      window.cancelAnimationFrame(animationFrameId);
-      window.clearTimeout(timeoutId);
-    };
-  }, [syncAutofilledFields]);
+  const { getCurrentFormValues, scheduleAutofillSync } = useAutofillSync({
+    formRef,
+    setValues,
+    setTouchedFields,
+  });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     const currentFormValues = getCurrentFormValues();
 
     setValues(currentFormValues);
 
-    const errors = Object.entries(currentFormValues).filter(([fieldName, value]) =>
-      getFieldError(fieldName as FieldName, value),
-    );
+    const errors = fieldNames.filter((fieldName) => getFieldError(fieldName, currentFormValues[fieldName]));
 
     if (errors.length === 0) {
       return;
     }
 
     event.preventDefault();
-
-    setTouchedFields({
-      name: true,
-      email: true,
-      subject: true,
-      message: true,
-    });
+    touchAllFields();
   };
 
   return (
@@ -127,43 +49,21 @@ export default function ContactForm() {
       onBlurCapture={scheduleAutofillSync}
       noValidate
     >
-      <ContactField
-        name="name"
-        label="Nom"
-        type="text"
-        value={values.name}
-        status={getStatus('name')}
-        error={getFieldError('name', values.name)}
-        autoComplete="name"
-        placeholder="Votre nom"
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-
-      <ContactField
-        name="email"
-        label="Adresse email"
-        type="email"
-        value={values.email}
-        status={getStatus('email')}
-        error={getFieldError('email', values.email)}
-        autoComplete="email"
-        placeholder="votre@email.fr"
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-
-      <ContactField
-        name="subject"
-        label="Objet"
-        type="text"
-        value={values.subject}
-        status={getStatus('subject')}
-        error={getFieldError('subject', values.subject)}
-        placeholder="Objet de votre demande"
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
+      {contactFields.map((field) => (
+        <ContactField
+          key={field.name}
+          name={field.name}
+          label={field.label}
+          type={field.type}
+          value={values[field.name]}
+          status={getStatus(field.name)}
+          error={getFieldError(field.name, values[field.name])}
+          autoComplete={field.autoComplete}
+          placeholder={field.placeholder}
+          onChange={handleChange}
+          onBlur={handleBlur}
+        />
+      ))}
 
       <ContactTextareaField
         name="message"
@@ -177,10 +77,7 @@ export default function ContactForm() {
         onBlur={handleBlur}
       />
 
-      <div className={styles.honeypot} aria-hidden="true">
-        <label htmlFor="website">Site web</label>
-        <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
-      </div>
+      <HoneypotField />
 
       <ContactSubmitButton />
     </form>

@@ -1,4 +1,4 @@
-import { FieldName, FieldValues, TouchedFields, FieldStatus } from './contactFormTypes';
+import type { FieldName, FieldStatus, FieldValues, TouchedFields } from './contactFormTypes';
 
 export const initialValues: FieldValues = {
   name: '',
