@@ -39,4 +39,18 @@ describe('ContactForm', () => {
 
     expect(screen.getAllByText('Ce champ est requis.')).toHaveLength(4);
   });
+
+  it('shows a valid state after correcting a touched field', () => {
+    render(<ContactForm />);
+
+    const nameInput = screen.getByLabelText('Nom');
+
+    fireEvent.blur(nameInput);
+
+    expect(screen.getByText('Ce champ est requis.')).toBeInTheDocument();
+
+    fireEvent.change(nameInput, { target: { value: 'Vincent' } });
+
+    expect(screen.queryByText('Ce champ est requis.')).not.toBeInTheDocument();
+  });
 });
