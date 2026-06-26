@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     absolute: 'Vincent Mardon | Pianiste accompagnateur en Île-de-France',
   },
   description:
-    'Pianiste accompagnateur en Seine-et-Marne et Île-de-France pour répétitions, auditions, examens, conscerts, projets musicaux et accompagnement pédagogique.',
+    'Pianiste accompagnateur en Seine-et-Marne et Île-de-France pour répétitions, auditions, examens, concerts, projets musicaux et accompagnement pédagogique.',
 };
 
 export default async function HomePage() {
