@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next';
-
-const siteUrl = 'https://pianist-site-vincentmardons-projects.vercel.app';
+import { siteUrl } from '@/config/site';
 
 const routes = [
   { path: '/', priority: 1 },
