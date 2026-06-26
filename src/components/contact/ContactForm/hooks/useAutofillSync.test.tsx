@@ -70,14 +70,14 @@ afterEach(() => {
   vi.useRealTimers();
 });
 
-describe('useAutoFillSync', () => {
+describe('useAutofillSync', () => {
   it('returns initial values when the form ref is empty', () => {
     const { result } = renderUseAutofillSync(null);
 
     expect(result.current.getCurrentFormValues()).toEqual(emptyValues);
   });
 
-  it('reads contact fields value from the form', () => {
+  it('reads contact field values from the form', () => {
     const form = createContactForm({
       name: 'Vincent',
       email: 'vincent@example.fr',
@@ -95,7 +95,7 @@ describe('useAutoFillSync', () => {
     });
   });
 
-  it('ignore fields outside the contact form model', () => {
+  it('ignores fields outside the contact form model', () => {
     const form = createContactForm({
       name: 'Vincent',
     });
