@@ -14,10 +14,3 @@ export const form = style({
   borderRadius: '1rem',
   boxShadow: '0 0.75rem 1.8rem rgb(0 0 0 / 0.22)',
 });
-
-export const honeypot = style({
-  position: 'absolute',
-  left: '-9999px',
-  width: '1px',
-  overflow: 'hidden',
-});

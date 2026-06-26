@@ -1,4 +1,4 @@
-import * as styles from '../ContactForm.css';
+import * as styles from './HoneypotField.css';
 
 export default function HoneypotField() {
   return (
