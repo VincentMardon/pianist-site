@@ -7,7 +7,7 @@ type ContactFieldConfig = {
   autoComplete?: string;
 };
 
-export const fieldNames: FieldName[] = ['name', 'email', 'subject', 'message'] as const;
+export const fieldNames = ['name', 'email', 'subject', 'message'] as const;
 
 export const contactFields = [
   {
