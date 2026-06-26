@@ -26,12 +26,13 @@ export const nav = style({
   '@media': {
     '(max-width: 640px)': {
       justifyContent: 'flex-start',
-      padding: '0.9rem 1rem',
-      gap: '1.15rem',
+      padding: '1rem 1.25rem 1.35rem',
+      gap: '1.75rem',
     },
 
     '(max-width: 360px)': {
-      gap: '0.9rem',
+      padding: '0.95rem 1rem 1.25rem',
+      gap: '1.15rem',
     },
   },
 });
@@ -88,15 +89,15 @@ export const navigationLinks = style({
     '(max-width: 640px)': {
       display: 'grid',
       gridTemplateColumns: 'max-content max-content',
-      columnGap: '1.6rem',
-      rowGap: '0.45rem',
-      justifyContent: 'start',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      flex: '0 1 auto',
+      flex: '1',
+      minWidth: 0,
+      rowGap: '0.5rem',
     },
 
     '(max-width: 360px)': {
-      columnGap: '1.25rem',
+      rowGap: '0.45rem',
     },
   },
 });
@@ -154,9 +155,17 @@ export const link = style({
     '(max-width: 640px)': {
       fontSize: '1rem',
       lineHeight: 1.25,
-      padding: '0.08rem 0',
+      padding: '0 0.05rem 0',
       width: 'max-content',
       justifySelf: 'start',
+    },
+  },
+});
+
+export const rightColumnLink = style({
+  '@media': {
+    '(max-width: 640px)': {
+      justifySelf: 'end',
     },
   },
 });
