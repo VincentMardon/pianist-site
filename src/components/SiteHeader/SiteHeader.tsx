@@ -28,16 +28,16 @@ export default function SiteHeader() {
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label="Navigation principale">
-        <div className={styles.primaryNavigation}>
-          <Link
-            href="/"
-            className={`${styles.homeLink} ${pathname === '/' ? styles.activeHomeLink : ''}`}
-            aria-label="Retour à l'accueil"
-            aria-current={pathname === '/' ? 'page' : undefined}
-          >
-            VM
-          </Link>
+        <Link
+          href="/"
+          className={`${styles.homeLink} ${pathname === '/' ? styles.activeHomeLink : ''}`}
+          aria-label="Retour à l'accueil"
+          aria-current={pathname === '/' ? 'page' : undefined}
+        >
+          VM
+        </Link>
 
+        <div className={styles.navigationLinks}>
           <div className={styles.linkGroup}>
             {contentLinks.map((link) => (
               <Link
@@ -50,19 +50,19 @@ export default function SiteHeader() {
               </Link>
             ))}
           </div>
-        </div>
 
-        <div className={styles.actionGroup}>
-          {actionLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={getLinkClassName(link.href, link.variant)}
-              aria-current={pathname === link.href ? 'page' : undefined}
-            >
-              {link.label}
-            </Link>
-          ))}
+          <div className={styles.actionGroup}>
+            {actionLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={getLinkClassName(link.href, link.variant)}
+                aria-current={pathname === link.href ? 'page' : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
         </div>
       </nav>
     </header>

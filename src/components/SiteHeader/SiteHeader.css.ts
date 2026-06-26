@@ -21,13 +21,17 @@ export const nav = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  flexWrap: 'wrap',
   gap: '0.75rem 2.5rem',
 
   '@media': {
     '(max-width: 640px)': {
-      padding: '1rem 1rem',
-      gap: '0.75rem 1.25rem',
+      justifyContent: 'flex-start',
+      padding: '0.9rem 1rem',
+      gap: '1.15rem',
+    },
+
+    '(max-width: 360px)': {
+      gap: '0.9rem',
     },
   },
 });
@@ -61,6 +65,40 @@ export const homeLink = style({
       boxShadow: '0 0.35rem 1rem rgb(216 181 100 / 0.18)',
     },
   },
+
+  '@media': {
+    '(max-width: 640px)': {
+      width: '3.35rem',
+      height: '3.35rem',
+      fontSize: '1.25rem',
+      lineHeight: 1,
+      letterSpacing: '0.02em',
+    },
+  },
+});
+
+export const navigationLinks = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  flex: 1,
+  gap: '0.75rem 2.5rem',
+
+  '@media': {
+    '(max-width: 640px)': {
+      display: 'grid',
+      gridTemplateColumns: 'max-content max-content',
+      columnGap: '1.6rem',
+      rowGap: '0.45rem',
+      justifyContent: 'start',
+      alignItems: 'center',
+      flex: '0 1 auto',
+    },
+
+    '(max-width: 360px)': {
+      columnGap: '1.25rem',
+    },
+  },
 });
 
 export const activeHomeLink = style({
@@ -68,28 +106,16 @@ export const activeHomeLink = style({
   borderColor: semanticColors.actionPrimary,
 });
 
-export const primaryNavigation = style({
-  display: 'flex',
-  alignItems: 'center',
-  flexWrap: 'wrap',
-  gap: '0.75rem 1.75rem',
-
-  '@media': {
-    '(max-width: 640px)': {
-      gap: '0.6rem 1rem',
-    },
-  },
-});
 export const linkGroup = style({
   display: 'flex',
   alignItems: 'center',
   flexWrap: 'wrap',
-  justifyContent: 'flex-end',
+  justifyContent: 'flex-start',
   gap: '0.75rem 1.5rem',
 
   '@media': {
     '(max-width: 640px)': {
-      gap: '0.5rem 0.9rem',
+      display: 'contents',
     },
   },
 });
@@ -104,7 +130,8 @@ export const actionGroup = style({
 
   '@media': {
     '(max-width: 640px)': {
-      gap: '0.5rem 0.9rem',
+      display: 'contents',
+      marginLeft: 0,
     },
   },
 });
@@ -125,7 +152,11 @@ export const link = style({
 
   '@media': {
     '(max-width: 640px)': {
-      fontSize: '0.9rem',
+      fontSize: '1rem',
+      lineHeight: 1.25,
+      padding: '0.08rem 0',
+      width: 'max-content',
+      justifySelf: 'start',
     },
   },
 });
