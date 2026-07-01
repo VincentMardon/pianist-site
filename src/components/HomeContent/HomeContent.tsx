@@ -4,10 +4,10 @@ export default function HomeContent() {
   return (
     <>
       <section>
-        <h1>Vincent Mardon - Pianiste accompagnateur</h1>
+        <h1>Vincent Mardon - Pianiste</h1>
         <p>
-          J&apos;accompagne chanteurs, instrumentistes et ensembles pour leurs répétitions, auditions, examens, concerts
-          et projets musicaux.
+          J&apos;accompagne les musiciens dans leur pratique, leur progression et leurs projets : cours particuliers,
+          préparation d&apos;examens, auditions, répétitions, concerts et travail d&apos;interprétation.
         </p>
         <p>
           Basé en Seine-et-Marne, j&apos;interviens principalement dans le secteur de Grand Paris Sud et en
@@ -20,12 +20,13 @@ export default function HomeContent() {
       <section>
         <h2>Prestations</h2>
         <ul>
+          <li>Cours de piano et accompagnement pédagogique</li>
+          <li>Préparation d&apos;examens, auditions et concours</li>
           <li>Accompagnement d&apos;élèves de conservatoire</li>
-          <li>Préparation d&apos;examens et d&apos;auditions</li>
-          <li>Accompagnements de chanteurs</li>
+          <li>Accompagnements de chanteurs et d&apos;instrumentistes</li>
           <li>Répétitions de musique de chambre</li>
           <li>Concerts et projets ponctuels</li>
-          <li>Accompagnement pédagogique, méthode de travail et interprétation</li>
+          <li>Méthode de travail, lecture, interprétation et reprise musicale</li>
         </ul>
 
         <Link href="/tarifs">Consulter les tarifs</Link>
