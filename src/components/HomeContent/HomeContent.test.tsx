@@ -8,13 +8,13 @@ vi.mock('next/link', () => ({
 import HomeContent from './HomeContent';
 
 describe('HomeContent', () => {
-  it('render main heading', () => {
+  it('renders the main heading', () => {
     render(<HomeContent />);
 
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /vincent mardon - pianiste accompagnateur/i,
+        name: /vincent mardon - pianiste/i,
       }),
     ).toBeInTheDocument();
   });
