@@ -7,6 +7,7 @@ import * as styles from './SiteHeader.css';
 const contentLinks = [
   { href: '/presentation', label: 'Présentation' },
   { href: '/pedagogie', label: 'Pédagogie', mobileAlign: 'right' },
+  { href: '/accompagnement', label: 'Accompagnement' },
 ];
 
 const actionLinks = [
