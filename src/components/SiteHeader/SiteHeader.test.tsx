@@ -42,6 +42,12 @@ describe('SiteHeader', () => {
 
     expect(
       screen.getByRole('link', {
+        name: /accompagnement/i,
+      }),
+    ).toHaveAttribute('href', '/accompagnement');
+
+    expect(
+      screen.getByRole('link', {
         name: /tarifs/i,
       }),
     ).toHaveAttribute('href', '/tarifs');
