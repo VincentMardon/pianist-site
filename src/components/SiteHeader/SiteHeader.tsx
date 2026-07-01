@@ -6,27 +6,22 @@ import * as styles from './SiteHeader.css';
 
 const contentLinks = [
   { href: '/presentation', label: 'Présentation' },
-  { href: '/pedagogie', label: 'Pédagogie', mobileAlign: 'right' },
+  { href: '/pedagogie', label: 'Pédagogie' },
   { href: '/accompagnement', label: 'Accompagnement' },
 ];
 
 const actionLinks = [
   { href: '/tarifs', label: 'Tarifs' },
-  { href: '/contact', label: 'Contact', variant: 'contact', mobileAlign: 'right' },
+  { href: '/contact', label: 'Contact', variant: 'contact' },
 ];
 
 export default function SiteHeader() {
   const pathname = usePathname();
 
-  const getLinkClassName = (href: string, variant?: string, mobileAlign?: string) => {
+  const getLinkClassName = (href: string, variant?: string) => {
     const isActive = pathname === href;
 
-    return [
-      styles.link,
-      isActive ? styles.activeLink : '',
-      variant === 'contact' ? styles.contactLink : '',
-      mobileAlign === 'right' ? styles.rightColumnLink : '',
-    ]
+    return [styles.link, isActive ? styles.activeLink : '', variant === 'contact' ? styles.contactLink : '']
       .filter(Boolean)
       .join(' ');
   };
@@ -49,7 +44,7 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={getLinkClassName(link.href, undefined, link.mobileAlign)}
+                className={getLinkClassName(link.href)}
                 aria-current={pathname === link.href ? 'page' : undefined}
               >
                 {link.label}
@@ -62,7 +57,7 @@ export default function SiteHeader() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={getLinkClassName(link.href, link.variant, link.mobileAlign)}
+                className={getLinkClassName(link.href, link.variant)}
                 aria-current={pathname === link.href ? 'page' : undefined}
               >
                 {link.label}

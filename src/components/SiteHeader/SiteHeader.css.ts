@@ -88,16 +88,16 @@ export const navigationLinks = style({
   '@media': {
     '(max-width: 640px)': {
       display: 'grid',
-      gridTemplateColumns: 'max-content max-content',
-      justifyContent: 'space-between',
-      alignItems: 'center',
+      gridTemplateColumns: '1fr minmax(5.5rem, 8rem)',
+      columnGap: '1.25rem',
+      alignItems: 'start',
       flex: '1',
       minWidth: 0,
-      rowGap: '0.5rem',
     },
 
     '(max-width: 360px)': {
-      rowGap: '0.45rem',
+      gridTemplateColumns: '1fr minmax(5rem, 7rem)',
+      rowGap: '0.9rem',
     },
   },
 });
@@ -116,7 +116,9 @@ export const linkGroup = style({
 
   '@media': {
     '(max-width: 640px)': {
-      display: 'contents',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: '0.55rem',
     },
   },
 });
@@ -131,8 +133,12 @@ export const actionGroup = style({
 
   '@media': {
     '(max-width: 640px)': {
-      display: 'contents',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      gap: '0.55rem',
       marginLeft: 0,
+      justifySelf: 'start',
     },
   },
 });
@@ -158,14 +164,6 @@ export const link = style({
       padding: '0 0.05rem 0',
       width: 'max-content',
       justifySelf: 'start',
-    },
-  },
-});
-
-export const rightColumnLink = style({
-  '@media': {
-    '(max-width: 640px)': {
-      justifySelf: 'end',
     },
   },
 });
