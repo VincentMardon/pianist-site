@@ -1,6 +1,9 @@
 import { style } from '@vanilla-extract/css';
 import { semanticColors } from '@/styles/semanticColors.css';
 
+const mobileHeader = '(max-width: 700px)';
+const narrowMobile = '(max-width: 360px)';
+
 export const header = style({
   position: 'sticky',
   top: 0,
@@ -24,13 +27,13 @@ export const nav = style({
   gap: '0.75rem 2.5rem',
 
   '@media': {
-    '(max-width: 640px)': {
+    [mobileHeader]: {
       justifyContent: 'flex-start',
       padding: '1rem 1.25rem 1.35rem',
       gap: '1.75rem',
     },
 
-    '(max-width: 360px)': {
+    [narrowMobile]: {
       padding: '0.95rem 1rem 1.25rem',
       gap: '1.15rem',
     },
@@ -68,7 +71,7 @@ export const homeLink = style({
   },
 
   '@media': {
-    '(max-width: 640px)': {
+    [mobileHeader]: {
       width: '3.35rem',
       height: '3.35rem',
       fontSize: '1.25rem',
@@ -86,7 +89,7 @@ export const navigationLinks = style({
   gap: '0.75rem 2.5rem',
 
   '@media': {
-    '(max-width: 640px)': {
+    [mobileHeader]: {
       display: 'grid',
       gridTemplateColumns: '1fr minmax(5.5rem, 8rem)',
       columnGap: '1.25rem',
@@ -95,7 +98,7 @@ export const navigationLinks = style({
       minWidth: 0,
     },
 
-    '(max-width: 360px)': {
+    [narrowMobile]: {
       gridTemplateColumns: '1fr minmax(5rem, 7rem)',
       rowGap: '0.9rem',
     },
@@ -115,7 +118,7 @@ export const linkGroup = style({
   gap: '0.75rem 1.5rem',
 
   '@media': {
-    '(max-width: 640px)': {
+    [mobileHeader]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
       gap: '0.55rem',
@@ -132,7 +135,7 @@ export const actionGroup = style({
   marginLeft: 'auto',
 
   '@media': {
-    '(max-width: 640px)': {
+    [mobileHeader]: {
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'flex-start',
@@ -158,7 +161,7 @@ export const link = style({
   },
 
   '@media': {
-    '(max-width: 640px)': {
+    [mobileHeader]: {
       fontSize: '1rem',
       lineHeight: 1.25,
       padding: '0 0.05rem 0',
