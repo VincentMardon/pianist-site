@@ -8,8 +8,6 @@ vi.mock('resend', () => ({
     emails = {
       send: sendEmail,
     };
-
-    constructor(_apiKey: string) {}
   },
 }));
 
