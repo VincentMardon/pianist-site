@@ -28,7 +28,7 @@ export const ctaLink = style({
       borderColor: semanticColors.actionPrimaryLight,
       transform: 'translateY(-1px)',
       boxShadow:
-        '0 0.6rem 1.35rem rgb(0 0 0 / 0.3), inset 0 1rem 0.28rem rgb(216 181 100 / 0.2), inset 0 1px 0 rgb(245 241 232 / 0.1)',
+        '0 0.6rem 1.35rem rgb(0 0 0 / 0.3), inset 0 0 1rem rgb(216 181 100 / 0.2), inset 0 1px 0 rgb(245 241 232 / 0.1)',
     },
 
     '&:active': {
