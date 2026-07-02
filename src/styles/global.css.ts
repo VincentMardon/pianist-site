@@ -21,7 +21,7 @@ globalStyle('body', {
   fontFamily: 'var(--font-body), system-ui, sans-serif',
   fontWeight: 300,
   lineHeight: 1.65,
-  letterSpacing: '0.01em',
+  letterSpacing: '0.018em',
 });
 
 /* ==================================

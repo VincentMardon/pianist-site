@@ -11,13 +11,13 @@ export const heading1 = style({
 });
 
 export const heading2 = style({
-  marginTop: '3rem',
-  marginBottom: '1.5rem',
+  marginTop: '2.25rem',
+  marginBottom: '1rem',
 });
 
 export const paragraph = style({
   marginTop: 0,
-  marginBottom: '1.25rem',
+  marginBottom: '1rem',
 });
 
 export const link = style({
@@ -34,12 +34,12 @@ export const link = style({
 
 export const list = style({
   marginTop: 0,
-  marginBottom: '1.5rem',
+  marginBottom: '1.25rem',
   paddingLeft: '1.5rem',
 });
 
 export const listItem = style({
-  marginBottom: '0.5rem',
+  marginBottom: '0.4rem',
 });
 
 export const tableWrapper = style({
