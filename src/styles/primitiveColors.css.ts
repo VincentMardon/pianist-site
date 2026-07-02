@@ -3,8 +3,8 @@ export const primitiveColors = {
 
   ebony900: '#050505',
   ebony800: '#0B0B0B',
-  ebony700: '#121212',
-  ebony600: '#181818',
+  ebony700: '#141414',
+  ebony600: '#1D1D1D',
 
   gold300: '#FEC94D',
   gold500: '#D8B564',

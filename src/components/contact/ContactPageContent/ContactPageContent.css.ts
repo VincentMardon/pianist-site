@@ -31,7 +31,7 @@ export const successMessage = style({
   backgroundColor: semanticColors.backgroundSurface,
 
   border: `1px solid ${semanticColors.successDark}`,
-  borderRadius: '0.75rem',
+  borderRadius: '1rem',
 
   fontSize: '0.95rem',
   lineHeight: 1.5,
@@ -46,7 +46,7 @@ export const errorMessage = style({
   backgroundColor: semanticColors.backgroundSurface,
 
   border: `1px solid ${semanticColors.dangerDark}`,
-  borderRadius: '0.75rem',
+  borderRadius: '1rem',
 
   fontSize: '0.95rem',
   lineHeight: 1.5,

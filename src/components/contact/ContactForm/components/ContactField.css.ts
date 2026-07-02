@@ -44,7 +44,7 @@ export const input = style({
   backgroundColor: 'transparent',
 
   border: '1px solid rgb(245 241 232 / 0.28)',
-  borderRadius: '0.95rem',
+  borderRadius: '1rem',
 
   font: 'inherit',
   fontSize: '0.95rem',
@@ -101,7 +101,7 @@ export const inputValid = style({
       caretColor: semanticColors.textPrimary,
       borderColor: semanticColors.success,
       boxShadow: '0 0 0 1000px rgb(32 32 32) inset, inset 0 1px 0 rgb(245 241 232 / 0.08)',
-      transition: 'background-color 9999s ease-in-out os',
+      transition: 'background-color 9999s ease-in-out 0s',
     },
 
     '&:-webkit-autofill:focus': {

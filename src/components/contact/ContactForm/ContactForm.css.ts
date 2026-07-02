@@ -10,7 +10,7 @@ export const form = style({
   padding: '1.5rem',
 
   backgroundColor: semanticColors.backgroundSurface,
-  border: '1px solid rgb(255 255 255 / 0.08)',
+  border: '1px solid rgb(255 255 255 / 0.1)',
   borderRadius: '1rem',
-  boxShadow: '0 0.75rem 1.8rem rgb(0 0 0 / 0.22)',
+  boxShadow: '0 0.75rem 1.8rem rgb(0 0 0 / 0.24), inset 0 1px 0 rgb(245 241 232 / 0.04)',
 });
