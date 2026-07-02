@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import * as styles from './HomeContent.css';
 
 export default function HomeContent() {
   return (
@@ -14,7 +15,9 @@ export default function HomeContent() {
           Île-de-France.
         </p>
 
-        <Link href="/presentation">En savoir plus</Link>
+        <Link href="/presentation" className={styles.ctaLink}>
+          En savoir plus
+        </Link>
       </section>
 
       <section>
@@ -29,7 +32,9 @@ export default function HomeContent() {
           <li>Méthode de travail, lecture, interprétation et reprise musicale</li>
         </ul>
 
-        <Link href="/tarifs">Consulter les tarifs</Link>
+        <Link href="/tarifs" className={styles.ctaLink}>
+          Consulter les tarifs
+        </Link>
       </section>
 
       <section>
@@ -48,14 +53,18 @@ export default function HomeContent() {
           plus solide.
         </p>
 
-        <Link href="/pedagogie">En savoir plus sur ma méthode pédagogique</Link>
+        <Link href="/pedagogie" className={styles.ctaLink}>
+          En savoir plus sur ma méthode pédagogique
+        </Link>
       </section>
 
       <section>
         <h2>Contact</h2>
         <p>Pour toute demande d&apos;information ou de devis :</p>
 
-        <Link href="/contact">Me contacter</Link>
+        <Link href="/contact" className={styles.ctaLink}>
+          Me contacter
+        </Link>
       </section>
     </>
   );
