@@ -44,6 +44,9 @@ export const link = style({
   display: 'inline-block',
   padding: '0.58rem 1.05rem',
 
+  color: semanticColors.textPrimary,
+  backgroundColor: semanticColors.backgroundSurface,
+
   border: '1px solid rgb(255 255 255 / 0.1)',
   borderRadius: '1rem',
 
