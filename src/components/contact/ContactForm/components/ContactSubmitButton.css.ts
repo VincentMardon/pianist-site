@@ -2,15 +2,15 @@ import { style } from '@vanilla-extract/css';
 import { semanticColors } from '@/styles/semanticColors.css';
 
 export const submitButton = style({
-  alignSelf: 'flex-end',
+  alignSelf: 'end',
 
   padding: '0.58rem 1.05rem',
 
   color: semanticColors.textPrimary,
-  backgroundColor: 'transparent',
+  backgroundColor: semanticColors.backgroundSurface,
 
-  border: `1px solid ${semanticColors.actionPrimary}`,
-  borderRadius: '0.95rem',
+  border: '1px solid rgb(255 255 255 / 0.1)',
+  borderRadius: '1rem',
 
   font: 'inherit',
   fontSize: '0.9rem',
@@ -18,19 +18,18 @@ export const submitButton = style({
   lineHeight: 1.2,
 
   cursor: 'pointer',
-  boxShadow: '0 0.25rem 0.75rem rgb(0 0 0 / 0.18), inset 0 1px 0 rgb(245 241 232 / 0.08)',
+  boxShadow: '0 0.25rem 0.75rem rgb(0 0 0 / 0.18), inset 0 1px 0 rgb(245 241 232 / 0.04)',
 
   transition:
-    'transform 140ms ease, color 140ms ease, border-color 140ms ease, border-width 140ms ease, background-color 140ms ease, box-shadow 140ms ease',
+    'transform 140ms ease, color 140ms ease, border-color 140ms ease, background-color 140ms ease, box-shadow 140ms ease',
 
   selectors: {
     '&:hover': {
       color: semanticColors.actionPrimaryLight,
       borderColor: semanticColors.actionPrimaryLight,
-      borderWidth: '1.5px',
       transform: 'translateY(-1px)',
       boxShadow:
-        '0 0.6rem 1.35rem rgb(0 0 0 / 0.34), 0 0 1rem rgb(216 181 100 / 0.26), inset 0 1px 0 rgb(245 241 232 / 0.16)',
+        '0 0.6rem 1.35rem rgb(0 0 0 / 0.3), inset 0 0 1rem rgb(216 181 100 / 0.2), inset 0 1px 0 rgb(245 241 232 / 0.1)',
     },
 
     '&:active': {
@@ -39,7 +38,7 @@ export const submitButton = style({
       borderColor: semanticColors.actionPrimaryLight,
       transform: 'translateY(1px)',
       boxShadow:
-        '0 0.16rem 0.4rem rgb(0 0 0 / 0.36), inset 0 0.1rem 0.28rem rgb(0 0 0 / 0.3), inset 0 1px 0 rgb(245 241 232 / 0.14)',
+        '0 0.16rem 0.4rem rgb(0 0 0 / 0.34), inset 0 0.1rem 0.28rem rgb(0 0 0 / 0.28), inset 0 1px 0 rgb(245 241 232 / 0.12)',
     },
 
     '&:focus-visible': {
