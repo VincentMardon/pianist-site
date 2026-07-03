@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Cormorant_Infant, Inter } from 'next/font/google';
+import { siteUrl } from '@/config/site';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import '@/styles/global.css';
@@ -19,6 +20,7 @@ const cormorant = Cormorant_Infant({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Vincent Mardon | Pianiste accompagnateur',
     template: '%s | Vincent Mardon',

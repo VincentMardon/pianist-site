@@ -1,1 +1,1 @@
-export const siteUrl = 'https://pianist-site-vincentmardons-projects.vercel.app';
+export const siteUrl = 'https://vincent-mardon.fr';
