@@ -5,7 +5,7 @@ export default function ContactFallback() {
     <aside className={styles.fallback} aria-label="Informations complémentaires">
       <p className={styles.fallbackParagraph}>
         Vous pouvez également m&apos;écrire directement à{' '}
-        <a href="mailto:mardon.vincent@gmail.com">mardon.vincent@gmail.com</a>.
+        <a href="mailto:contact@vincent-mardon.fr">contact@vincent-mardon.fr</a>.
       </p>
 
       <p className={styles.fallbackParagraph}>
