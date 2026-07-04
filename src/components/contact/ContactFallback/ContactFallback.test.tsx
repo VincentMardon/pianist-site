@@ -6,9 +6,9 @@ describe('ContactFallback', () => {
   it('renders fallback contact information', () => {
     render(<ContactFallback />);
 
-    expect(screen.getByRole('link', { name: 'mardon.vincent@gmail.com' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: 'contact@vincent-mardon.fr' })).toHaveAttribute(
       'href',
-      'mailto:mardon.vincent@gmail.com',
+      'mailto:contact@vincent-mardon.fr',
     );
 
     expect(screen.getByRole('link', { name: 'tarifs' })).toHaveAttribute('href', '/tarifs');
