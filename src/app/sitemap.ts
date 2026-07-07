@@ -5,6 +5,7 @@ const routes = [
   { path: '/', priority: 1 },
   { path: '/presentation', priority: 0.9 },
   { path: '/pedagogie', priority: 0.9 },
+  { path: '/concerts', priority: 0.9 },
   { path: '/tarifs', priority: 0.8 },
   { path: '/contact', priority: 0.8 },
   { path: '/mentions-legales', priority: 0.3 },
