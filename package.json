@@ -17,7 +17,7 @@
     "@vanilla-extract/next-plugin": "^2.5.2",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "next": "16.2.7",
+    "next": "^16.2.12",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
@@ -32,11 +32,17 @@
     "@types/react-dom": "^19",
     "@vanilla-extract/vite-plugin": "^5.2.2",
     "eslint": "^9",
-    "eslint-config-next": "16.2.7",
+    "eslint-config-next": "^16.2.12",
     "eslint-config-prettier": "^10.1.8",
     "jsdom": "^29.1.1",
     "prettier": "^3.8.3",
     "typescript": "^5",
     "vitest": "^4.1.8"
+  },
+  "allowScripts": {
+    "@swc/core@1.15.40": true,
+    "esbuild@0.28.1": true,
+    "sharp@0.34.5": true,
+    "unrs-resolver@1.12.2": true
   }
 }
