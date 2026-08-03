@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
 import HomeContent from '@/components/HomeContent';
+import { siteUrl } from '@/config/site';
+
+const websiteJsonLd = {
+  '@context:': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Vincent Mardon',
+  url: `${siteUrl}/`,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -13,5 +21,15 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  return <HomeContent />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteJsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
+      <HomeContent />
+    </>
+  );
 }
