@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Accompagnement',
   description:
     'Accompagnement au piano pour chanteurs, instrumentistes, examens, auditions, concerts et projets musicaux à Grand Paris Sud et en Île-de-France.',
+  alternates: {
+    canonical: '/accompagnement',
+  },
 };
 
 export default function PedagogiePage() {

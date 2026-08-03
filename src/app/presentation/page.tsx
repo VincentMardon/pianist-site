@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Présentation',
   description:
     "Parcours de Vincent Mardon, pianiste accompagnateur indépendant en Île-de-France, formé au piano classique et engagé dans l'accompagnement des musiciens.",
+  alternates: {
+    canonical: '/presentation',
+  },
 };
 
 export default function PresentationPage() {

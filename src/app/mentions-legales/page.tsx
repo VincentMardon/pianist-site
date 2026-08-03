@@ -4,6 +4,9 @@ import MarkdownPage from '@/components/MarkdownPage';
 export const metadata: Metadata = {
   title: 'Mentions légales',
   description: 'Mentions légales du site de Vincent Mardon, pianiste accompagnateur indépendant en Île-de-France.',
+  alternates: {
+    canonical: '/mentions-legales',
+  },
 };
 
 export default function MentionsLegalesPage() {

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Contacter Vincent Mardon pour un accompagnement musical, une répétition, un concert, un cours ou une demande de devis en Île-de-France.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 type ContactPageProps = {

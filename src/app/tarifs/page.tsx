@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Tarifs',
   description:
     'Tarifs de Vincent Mardon pour accompagnement musical, cours de piano, accompagnement pédagogique, concerts, demi-journées, journées et projets sur devis.',
+  alternates: {
+    canonical: '/tarifs',
+  },
 };
 
 export default function TarifsPage() {

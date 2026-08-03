@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Concerts privés',
   description:
     'Vincent Mardon, pianiste professionnel en Île-de-France, propose des concerts privés sur mesure à domicile, pour vos réceptions, cérémonies et événements en Seine-et-Marne et dans le Grand Paris.',
+  alternates: {
+    canonical: '/concerts',
+  },
 };
 
 export default function ConcertsPage() {

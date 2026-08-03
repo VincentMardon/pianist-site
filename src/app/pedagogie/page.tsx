@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Pédagogie',
   description:
     'Méthode pédagogique de Vincent Mardon : travail du piano, interprétation, technique, autonomie et progression adaptée à chaque élève.',
+  alternates: {
+    canonical: '/pedagogie',
+  },
 };
 
 export default function PedagogiePage() {

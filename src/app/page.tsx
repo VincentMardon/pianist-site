@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   },
   description:
     'Pianiste accompagnateur en Seine-et-Marne et Île-de-France pour répétitions, auditions, examens, concerts, projets musicaux et accompagnement pédagogique.',
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default async function HomePage() {
