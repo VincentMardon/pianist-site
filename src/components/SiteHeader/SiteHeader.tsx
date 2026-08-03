@@ -8,7 +8,7 @@ const contentLinks = [
   { href: '/presentation', label: 'Présentation' },
   { href: '/pedagogie', label: 'Pédagogie' },
   { href: '/accompagnement', label: 'Accompagnement' },
-  { href: 'concerts', label: 'Concerts' },
+  { href: '/concerts', label: 'Concerts' },
 ];
 
 const actionLinks = [
